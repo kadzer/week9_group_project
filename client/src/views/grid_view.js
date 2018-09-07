@@ -6,7 +6,7 @@ const GridView = function (container) {
 };
 
 GridView.prototype.bindEvents = function () {
-  Publish.subscribe('Dinosaurs:data-loaded', (event) => {
+  PubSub.subscribe('Dinosaurs:data-loaded', (event) => {
     this.render(event.detail);
   });
 };
