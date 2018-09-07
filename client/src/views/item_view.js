@@ -9,22 +9,22 @@ ItemView.prototype.render = function (dinosaur) {
   const name = this.createHeading(dinosaur.name);
   dinosaurContainer.appendChild(name);
 
-  const pronunciation = this.createDetail('Pronunciation ', dinosaur.pronunciation);
+  const pronunciation = this.createDetail('Pronunciation', dinosaur.pronunciation);
   dinosaurContainer.appendChild(pronunciation);
 
-  const meaningOfName = this.createDetail('Meaning Of Name ', dinosaur.meaningOfName);
+  const meaningOfName = this.createDetail('Meaning Of Name', dinosaur.meaningOfName);
   dinosaurContainer.appendChild(meaningOfName);
 
-  const diet = this.createDetail('Diet ', dinosaur.diet);
+  const diet = this.createDetail('Diet', dinosaur.diet);
   dinosaurContainer.appendChild(diet);
 
-  const length = this.createDetail('Length ', dinosaur.length);
+  const length = this.createDetail('Length', dinosaur.length);
   dinosaurContainer.appendChild(length);
 
   const period = this.createTextDetail(`This Dinosaur lived during the ${dinosaur.period} period which was ${dinosaur.mya} million years ago.`);
   dinosaurContainer.appendChild(period);
 
-  const info = this.createDetail('Fun Fact ' dinosaur.info);
+  const info = this.createDetail('Fun Fact' dinosaur.info);
   dinosaurContainer.appendChild(info);
 };
 
@@ -34,6 +34,11 @@ ItemView.prototype.createHeading = function (textContent) {
   return heading;
 };
 
+ItemView.prototype.createDetail = function (label, text) {
+  const detail = document.createElement('p');
+  detail.textContent = `${label}${text}`;
+  return detail;
+}
 
 
 
