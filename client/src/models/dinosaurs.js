@@ -2,7 +2,7 @@ const Request = require('../helpers/request.js');
 const PubSub = require('../helpers/pub_sub.js');
 
 const Dinosaurs = function (url) {
-  this.url = 'http://localhost:3000/api/dinosaurs';
+  this.url = 'http://localhost:3000/api/dino';
   this.request = new Request(this.url);
 };
 
