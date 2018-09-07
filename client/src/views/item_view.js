@@ -38,6 +38,12 @@ ItemView.prototype.createDetail = function (label, text) {
   const detail = document.createElement('p');
   detail.textContent = `${label}${text}`;
   return detail;
+};
+
+ItemView.prototype.createTextDetail = function (textContent) {
+  const textDetail = document.createElement('p');
+  textDetail.textContent = textContent;
+  return textDetail;
 }
 
 
