@@ -1,5 +1,5 @@
 const ItemView = function (container) {
-  this.contaienr = container;
+  this.container = container;
 };
 
 ItemView.prototype.render = function (dinosaur) {
@@ -26,6 +26,8 @@ ItemView.prototype.render = function (dinosaur) {
 
   const info = this.createDetail('Fun Fact', dinosaur.info);
   dinosaurContainer.appendChild(info);
+
+  this.container.appendChild(dinosaurContainer);
 };
 
 ItemView.prototype.createHeading = function (textContent) {
