@@ -28,6 +28,13 @@ ItemView.prototype.render = function (dinosaur) {
   dinosaurContainer.appendChild(info);
 };
 
+ItemView.prototype.createHeading = function (textContent) {
+  const heading = document.createElement('h3');
+  heading.textContent = textContent;
+  return heading;
+};
+
+
 
 
 
