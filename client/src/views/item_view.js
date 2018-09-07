@@ -24,7 +24,7 @@ ItemView.prototype.render = function (dinosaur) {
   const period = this.createTextDetail(`This Dinosaur lived during the ${dinosaur.period} period which was ${dinosaur.mya} million years ago.`);
   dinosaurContainer.appendChild(period);
 
-  const info = this.createDetail('Fun Fact' dinosaur.info);
+  const info = this.createDetail('Fun Fact', dinosaur.info);
   dinosaurContainer.appendChild(info);
 };
 
