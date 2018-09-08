@@ -8,7 +8,7 @@ const GridView = function (container) {
 GridView.prototype.bindEvents = function () {
   PubSub.subscribe('Dinosaurs:data-loaded', (event) => {
     this.render(event.detail);
-    this.renderNames(event.detail);
+    this.createListElement(event.detail);
   });
 };
 
@@ -18,13 +18,19 @@ GridView.prototype.render = function (dinosaurs) {
   dinosaurs.forEach((dinosaur) =>  itemView.render(dinosaur));
 };
 
-GridView.prototype.renderNames = function (dinosaurs) {
+GridView.prototype.createListElement = function (dinosaurs) {
+  const namesList = document.createElement('div');
+  namesList.id = 'dino_names';
+  this.container.appendChild(namesList);
   dinosaurs.forEach((dinosaur) => {
     const option = this.createNamesElement(dinosaur);
-    this.container.appendChild(option);
-    // console.log(option);
+    namesList.appendChild(option);
   })
-};
+}
+
+// GridView.prototype.renderNames = function (dinosaurs) {
+//
+// };
 
 GridView.prototype.createNamesElement = function (dinosaur) {
   // function to create div and populate that with the name data extracted from the data.
