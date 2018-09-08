@@ -14,7 +14,10 @@ GridView.prototype.bindEvents = function () {
 
 GridView.prototype.render = function (dinosaurs) {
   this.container.innerHTML = '';
-  const itemView = new ItemView(this.container);
+  const dinoGrid = document.createElement('div');
+  dinoGrid.id = 'dino_grid';
+  this.container.appendChild(dinoGrid);
+  const itemView = new ItemView(dinoGrid);
   dinosaurs.forEach((dinosaur) =>  itemView.render(dinosaur));
 };
 
