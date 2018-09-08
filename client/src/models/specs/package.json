@@ -1,0 +1,14 @@
+{
+  "name": "specs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dinosaur_spec.js",
+  "scripts": {
+    "test": "mocha specs"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "mocha": "^5.2.0"
+  }
+}
