@@ -9,6 +9,12 @@ GridView.prototype.bindEvents = function () {
   PubSub.subscribe('Dinosaurs:data-loaded', (event) => {
     this.render(event.detail);
     this.createListElement(event.detail);
+    const element = document.querySelector('#dino_names');
+    element.addEventListener('click', (event) => {
+      const selectedIndex = event.target.value;
+      PubSub.publish('GridView:Change', selectedIndex);
+      console.log(event.target.value);
+    });
   });
 };
 
@@ -25,8 +31,8 @@ GridView.prototype.createListElement = function (dinosaurs) {
   const namesList = document.createElement('div');
   namesList.id = 'dino_names';
   this.container.appendChild(namesList);
-  dinosaurs.forEach((dinosaur) => {
-    const option = this.createNamesElement(dinosaur);
+  dinosaurs.forEach((dinosaur, index) => {
+    const option = this.createNamesElement(dinosaur, index);
     namesList.appendChild(option);
   })
 }
@@ -35,11 +41,15 @@ GridView.prototype.createListElement = function (dinosaurs) {
 //
 // };
 
-GridView.prototype.createNamesElement = function (dinosaur) {
+GridView.prototype.createNamesElement = function (dinosaur, index) {
   // function to create div and populate that with the name data extracted from the data.
   const option = document.createElement('option');
   option.textContent = dinosaur.name;
-  return option
+  option.value = index;
+  // console.log(index);
+  return option;
+  // const element = document.selectElement('option');
+
 
 };
 
