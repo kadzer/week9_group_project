@@ -1,6 +1,17 @@
+const PubSub = require('../helpers/pub_sub.js');
+
 const ItemView = function (container) {
   this.container = container;
 };
+// 
+// ItemView.prototype.bindEvents = function () {
+//   const gridElement = document.querySelector('#dinosaur');
+//   gridElement.addEventListener('click', (event) => {
+//     const selectedIndex = event.target.value;
+//     PubSub.publish('GridView:Change', selectedIndex);
+//     console.log(event);
+//   });
+// };
 
 ItemView.prototype.render = function (dinosaur) {
   const dinosaurContainer = document.createElement('div');
@@ -8,6 +19,8 @@ ItemView.prototype.render = function (dinosaur) {
 
   const name = this.createHeading(dinosaur.name);
   dinosaurContainer.appendChild(name);
+
+
 
   // const pronunciation = this.createDetail('Pronunciation', dinosaur.pronunciation);
   // dinosaurContainer.appendChild(pronunciation);
@@ -28,7 +41,11 @@ ItemView.prototype.render = function (dinosaur) {
   // dinosaurContainer.appendChild(info);
 
   this.container.appendChild(dinosaurContainer);
+
 };
+
+
+
 
 ItemView.prototype.createHeading = function (textContent) {
   const heading = document.createElement('h3');
@@ -46,7 +63,7 @@ ItemView.prototype.createTextDetail = function (textContent) {
   const textDetail = document.createElement('p');
   textDetail.textContent = textContent;
   return textDetail;
-}
+};
 
 
 

@@ -9,12 +9,13 @@ GridView.prototype.bindEvents = function () {
   PubSub.subscribe('Dinosaurs:data-loaded', (event) => {
     this.render(event.detail);
     this.createListElement(event.detail);
-    const element = document.querySelector('#dino_names');
-    element.addEventListener('click', (event) => {
+    const nameElement = document.querySelector('#dino_names');
+    nameElement.addEventListener('click', (event) => {
       const selectedIndex = event.target.value;
       PubSub.publish('GridView:Change', selectedIndex);
       console.log(event.target.value);
     });
+
   });
 };
 

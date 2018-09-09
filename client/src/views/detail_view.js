@@ -4,6 +4,11 @@ const DetailView = function (container) {
   this.container
 };
 
+// DetailView.prototype.bindEvents = function () {
+//
+// }
+
+
 DetailView.prototype.render = function (dinosaur) {
   const dinosaurContainer = document.createElement('div');
   dinosaurContainer.id = 'dinosaur';
