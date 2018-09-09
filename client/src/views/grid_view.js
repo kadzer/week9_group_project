@@ -13,7 +13,7 @@ GridView.prototype.bindEvents = function () {
     nameElement.addEventListener('click', (event) => {
       const selectedName = event.target.innerText;
       PubSub.publish('GridView:Change', selectedName);
-      console.log(event.target.innerText);
+      // console.log(event.target.innerText);
     });
 
   });
@@ -59,10 +59,6 @@ GridView.prototype.createNamesElement = function (dinosaur, index) {
 
 
 };
-
-
-
-
 
 
 module.exports = GridView;
