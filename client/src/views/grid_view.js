@@ -11,9 +11,9 @@ GridView.prototype.bindEvents = function () {
     this.createListElement(event.detail);
     const nameElement = document.querySelector('#dino_names');
     nameElement.addEventListener('click', (event) => {
-      const selectedIndex = event.target.value;
-      PubSub.publish('GridView:Change', selectedIndex);
-      console.log(event.target.value);
+      const selectedName = event.target.innerText;
+      PubSub.publish('GridView:Change', selectedName);
+      console.log(event.target.innerText);
     });
 
   });
@@ -25,7 +25,13 @@ GridView.prototype.render = function (dinosaurs) {
   dinoGrid.id = 'dino_grid';
   this.container.appendChild(dinoGrid);
   const itemView = new ItemView(dinoGrid);
-  dinosaurs.forEach((dinosaur) =>  itemView.render(dinosaur));
+  dinosaurs.forEach((dinosaur) =>  {
+    itemView.render(dinosaur)
+  });
+  dinoGrid.addEventListener('click', (event) => {
+    const selectedDinosaur = event.target.innerText;
+    console.log(event.target.innerText);
+  })
 };
 
 GridView.prototype.createListElement = function (dinosaurs) {

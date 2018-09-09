@@ -8,8 +8,10 @@ const Dinosaurs = function (url) {
 
 Dinosaurs.prototype.bindEvents = function () {
 PubSub.subscribe('GridView:Change', (event) => {
-  const dinoIndex = event.detail;
-  this.sendDino(dinoIndex);
+  const dinoName = event.detail;
+  console.log(event.detail);
+  // this.sendDino(dinoName);
+  this.spitOutDinos();
 })
 };
 
@@ -21,16 +23,37 @@ PubSub.subscribe('GridView:Change', (event) => {
 //   })
 // };
 
+Dinosaurs.prototype.spitOutDinos = function () {
+  PubSub.subscribe('Dinosaurs:data-loaded', (event) => {
+    console.log(event.detail);
+  })
+};
+
+
 // getData publishes seeded data
 Dinosaurs.prototype.getData = function () {
   this.request.get()
   .then((dinosaurs) => {
     PubSub.publish('Dinosaurs:data-loaded', dinosaurs);
+    return dinosaurs;
   })
   .catch(console.error);
 };
 
+// Dinosaurs.prototype.publishDinoNames = function (data) {
+//
+// };
+//
 
+
+
+// Dinosaurs.prototype.findByName = function (dinoName) {
+//   const allDinos = this.SOMETHING.getData();
+//   const foundDino = this.allDinos.find((dino) => {
+//     return dino.name = dinoName;
+//   });
+//   return dinoName;
+// };
 
 
 

@@ -3,7 +3,7 @@ const PubSub = require('../helpers/pub_sub.js');
 const ItemView = function (container) {
   this.container = container;
 };
-// 
+//
 // ItemView.prototype.bindEvents = function () {
 //   const gridElement = document.querySelector('#dinosaur');
 //   gridElement.addEventListener('click', (event) => {
@@ -19,7 +19,6 @@ ItemView.prototype.render = function (dinosaur) {
 
   const name = this.createHeading(dinosaur.name);
   dinosaurContainer.appendChild(name);
-
 
 
   // const pronunciation = this.createDetail('Pronunciation', dinosaur.pronunciation);
