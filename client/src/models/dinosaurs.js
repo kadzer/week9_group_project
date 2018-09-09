@@ -9,9 +9,10 @@ const Dinosaurs = function (url) {
 Dinosaurs.prototype.bindEvents = function () {
 PubSub.subscribe('GridView:Change', (event) => {
   const dinoName = event.detail;
-  console.log(event.detail);
+  // console.log(event.detail);
+  this.findByName(dinoName);
   // this.sendDino(dinoName);
-  this.spitOutDinos();
+  // this.spitOutDinos();
 })
 };
 
@@ -23,9 +24,20 @@ PubSub.subscribe('GridView:Change', (event) => {
 //   })
 // };
 
+Dinosaurs.prototype.findByName = function (dinoName) {
+  const allDinos = this.spitOutDinos();
+  console.log();
+  const foundDino = this.allDinos.find((dino) => {
+    return dino.name === dinoName;
+  });
+  return dinoName;
+};
+
 Dinosaurs.prototype.spitOutDinos = function () {
   PubSub.subscribe('Dinosaurs:data-loaded', (event) => {
     console.log(event.detail);
+    return event.detail;
+
   })
 };
 
@@ -47,13 +59,7 @@ Dinosaurs.prototype.getData = function () {
 
 
 
-// Dinosaurs.prototype.findByName = function (dinoName) {
-//   const allDinos = this.SOMETHING.getData();
-//   const foundDino = this.allDinos.find((dino) => {
-//     return dino.name = dinoName;
-//   });
-//   return dinoName;
-// };
+
 
 
 
