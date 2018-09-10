@@ -14,6 +14,13 @@ DetailView.prototype.bindEvents = function () {
   })
 };
 
+DetailView.prototype.bindEvents = function () {
+  PubSub.subscribe('Dinosaurs:found-dino', (event) => {
+    console.log(event.detail);
+    // this.render(event.detail);
+  })
+}
+
 
 
 DetailView.prototype.render = function (dinosaur) {
