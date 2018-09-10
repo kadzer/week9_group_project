@@ -12,7 +12,7 @@ db.dinoCollection.insertMany([
     "period": "Late Jurassic",
     "mya": "156-144",
     "info": "Allosaurus was an apex predator in the Late Jurassic in North America.",
-    "picture": "images/JWEAllosaurus01.png"
+    "picture": "images/Allosaurus.png"
   },
   {
     "id": 2,
@@ -24,7 +24,7 @@ db.dinoCollection.insertMany([
     "period": "Late Jurassic",
     "mya": "154-145",
     "info": "Named the 'deceptive lizard' because its skull was confused with those of other sauropods until 1909.",
-    "picture": "images/JWEAllosaurus01.png"
+    "picture": "images/Apatosaurus.png"
   },
   {
     "id": 3,
@@ -36,22 +36,10 @@ db.dinoCollection.insertMany([
     "period": "Late Jurassic",
     "mya": "155-140",
     "info": "Brachiosaurus was a large, North American sauropod dinosaur with an arch encircling its nasal opening.",
-    "picture": "images/JWEAllosaurus01.png"
+    "picture": "images/Brachiosaurus.png"
   },
   {
     "id": 4,
-    "name": "Compsognathus",
-    "pronunciation": "komp-sog-NATH-us",
-    "meaningOfName": "pretty jaw",
-    "diet": "carnivorous",
-    "length": "0.65m",
-    "period": "Late Jurassic",
-    "mya": "145-140",
-    "info": "Compsognathus was small and bipedal, roughly the size of a turkey. It lived in Europe and was the first dinosaur genus to be portrayed with feathers.",
-    "picture": "images/JWEAllosaurus01.png"
-  },
-  {
-    "id": 5,
     "name": "Dracorex",
     "pronunciation": "dray-ko-rex",
     "meaningOfName": "dragon king",
@@ -60,164 +48,71 @@ db.dinoCollection.insertMany([
     "period": "Late Cretaceous",
     "mya": "66",
     "info": "<em>Dracorex hogwartsia</em> was a pachycephalosaur that did not have a domed head. Instead, its skull was adorned with spikes and frills reminiscent of a dragon. A skull was discovered in the Hell Creek Formation in South Dakota and donated to the Children's Museum of Indianapolis in 2004. Its name was inspired by J.K. Rowling's Harry Potter series and the young visitors to the children's museum.",
-    "picture": "images/JWEAllosaurus01.png"
+    "picture": "images/Dracorex.png"
+  },
+  {
+    "id": 5,
+    "name": "Parasaurolophus",
+    "pronunciation": "PARR-eh-saw-ROL-off-us / PARR-eh-sawr-eh-LOH-fus",
+    "meaningOfName": "near crested lizard",
+    "diet": "herbivorous",
+    "length": "11m",
+    "period": "Late Cretaceous",
+    "mya": "76-74",
+    "info": "Found in Canada and the USA, Parasaurolophus was a hadrosaur most famous for its long, elaborate cranial crest.",
+    "picture": "images/Parasaurolophus.png"
+
   },
   {
     "id": 6,
-    "name": "Elasmosaurus",
-    "pronunciation": "ee-LAZ-mo-sore-us",
-    "meaningOfName": "thin plate lizard",
+    "name": "Spinosaurus",
+    "pronunciation": "SPINE-oh-SORE-us",
+    "meaningOfName": "spine lizard",
     "diet": "carnivorous",
-    "length": "14m",
-    "period": "Late Cretaceous",
-    "mya": "80.5",
-    "info": "Elasmosaurus was an aquatic dinosaur with an extremely long neck that likely fed on other smaller aquatic fauna like fish, molluscs, and squid. E.D. Cope mistakenly placed the skull of an Elasmosaurus on the much shorter tail rather than the extremely long neck.",
-    "picture": "images/JWEAllosaurus01.png"
+    "length": "18m",
+    "period": "Early Cretaceous",
+    "mya": "112-97",
+    "info": "Spinosaurus was one of the largest carnivorous dinosaurs to walk the Earth. Its diet consisted mostly of fish and the large spines on its back likely formed a sail.",
+    "picture": "images/Spinosaurus.png"
+
   },
   {
     "id": 7,
-    "name": "Giraffatitan",
-    "pronunciation": "ji-raf-e-tie-tan",
-    "meaningOfName": "giraffe titan",
-    "diet": "herbivorous",
-    "length": "23m",
-    "period": "Late Jurassic",
-    "mya": "154-142",
-    "info": "Giraffatitan was a large sauropod related to Brachiosaurus with huge nostrils and nasal openings in its skull.",
-    "picture": "images/JWEAllosaurus01.png"
+    "name": "Stegosaurus",
+    "pronunciation": "STEG-o-SAWR-us",
+    "meaningOfName": "'roof lizard' or 'plated lizard'",
+    "diet": "Herbivore",
+    "length": "9m",
+    "period": "Late Jurassic period",
+    "mya": "156-140",
+    "info": "Stegosaurus had 17 bony plates that were embedded in its back - the plates ran along the Stegosaurus' back and tail in two rows, and the plates alternated in alignment. The largest of these triangular plates was about 2.5 ft (76 cm) tall and just as long. Stegosaurus also had spikes at the end of its flexible tail (these are called thagomizers).",
+    "picture": "images/Stegosaurus.png"
+
   },
   {
     "id": 8,
-    "name": "Indosuchus",
-    "pronunciation": "in-doh-sook-us",
-    "meaningOfName": "Indian crocodile",
-    "diet": "carnivorous",
-    "length": "7m",
-    "period": "Late Cretaceous",
-    "mya": "70-66",
-    "info": "Indosuchus had a flattened crest on its skull.",
-    "picture": "images/JWEAllosaurus01.png"
+    "name": "Stegosaurus",
+    "pronunciation": "STEG-o-SAWR-us",
+    "meaningOfName": "'roof lizard' or 'plated lizard'",
+    "diet": "Herbivore",
+    "length": "9m",
+    "period": "Late Jurassic period",
+    "mya": "156-140",
+    "info": "Stegosaurus had 17 bony plates that were embedded in its back - the plates ran along the Stegosaurus' back and tail in two rows, and the plates alternated in alignment. The largest of these triangular plates was about 2.5 ft (76 cm) tall and just as long. Stegosaurus also had spikes at the end of its flexible tail (these are called thagomizers).",
+    "picture": "images/Stegosaurus.png"
+
   },
   {
     "id": 9,
-    "name": "Jingshanosaurus",
-    "pronunciation": "jing-shahn-oh-sore-us",
-    "meaningOfName": "Jingshan lizard",
-    "diet": "herbivorous",
-    "length": "5m",
-    "period": "Early Jurassic",
-    "mya": "205-190",
-    "info": "Jingshanosaurus was one of the last prosauropods, a long-necked herbivore able to walk on two legs.",
-    "picture": "images/JWEAllosaurus01.png"
+    "name": "Triceratops",
+    "pronunciation": "try-SER-a-tops",
+    "meaningOfName": "three-horned face",
+    "diet": "Herbivore",
+    "length": "9m",
+    "period": "Late Cretaceous period",
+    "mya": "72-65",
+    "info": "When threatened by predators, Triceratops probably charged into its enemy like the modern-day rhinoceros does. Triceratops was probably a herding animal, like the other ceratopsians. T. rex probably ate dinosaurs like Triceratops.",
+    "picture": "images/Triceratops.png"
+
   }
-  // {
-  //   "id": 10,
-  //   "name": "Khaan",
-  //   "pronunciation": "kahn",
-  //   "meaningOfName": "ruler",
-  //   "diet": "omnivorous",
-  //   "length": "1.8m",
-  //   "period": "Late Cretaceous",
-  //   "mya": "81-75",
-  //   "info": "Khaan was an oviraptor with a parrot-like beak, discovered in Mongolia."
-  // },
-  // {
-  //   "id": 11,
-  //   "name": "Minmi",
-  //   "pronunciation": "min-mie",
-  //   "meaningOfName": "Minmi Crossing, Queensland, Australia",
-  //   "diet": "herbivorous",
-  //   "length": "3m",
-  //   "period": "Early Cretaceous",
-  //   "mya": "121-112",
-  //   "info": "Minmi was a small, anklyosaurian, armored dinosaur discovered in Australia."
-  // },
-  // {
-  //   "id": 12,
-  //   "name": "Ouranosaurus",
-  //   "pronunciation": "oo-RAH-noh-sore-us",
-  //   "meaningOfName": "brave monitor lizard",
-  //   "diet": "herbivorous",
-  //   "length": "7m",
-  //   "period": "Early Cretaceous",
-  //   "mya": "125-112",
-  //   "info": "Ouranosaurus was an iguanodont dinosaur in Africa. It had a large sail on its back supported by long, wide neural spines and an elnogated, flat skull."
-  // },
-  // {
-  //   "id": 13,
-  //   "name": "Parasaurolophus",
-  //   "pronunciation": "PARR-eh-saw-ROL-off-us / PARR-eh-sawr-eh-LOH-fus",
-  //   "meaningOfName": "near crested lizard",
-  //   "diet": "herbivorous",
-  //   "length": "11m",
-  //   "period": "Late Cretaceous",
-  //   "mya": "76-74",
-  //   "info": "Found in Canada and the USA, Parasaurolophus was a hadrosaur most famous for its long, elaborate cranial crest."
-  // },
-  // {
-  //   "id": 14,
-  //   "name": "Spinosaurus",
-  //   "pronunciation": "SPINE-oh-SORE-us",
-  //   "meaningOfName": "spine lizard",
-  //   "diet": "carnivorous",
-  //   "length": "18m",
-  //   "period": "Early Cretaceous",
-  //   "mya": "112-97",
-  //   "info": "Spinosaurus was one of the largest carnivorous dinosaurs to walk the Earth. Its diet consisted mostly of fish and the large spines on its back likely formed a sail."
-  // },
-  // {
-  //   "id": 15,
-  //   "name": "Tyrannosaurus",
-  //   "pronunciation": "tie-RAN-oh-sore-us",
-  //   "meaningOfName": "tyrant lizard",
-  //   "diet": "carnivorous",
-  //   "length": "12m",
-  //   "period": "Late Cretaceous",
-  //   "mya": "68-66",
-  //   "info": "Tyrannosaurus is well-represented in both fiction and history with over 50 specimens discovered. It and was one of the last non-avian dinosaurs to exist before the extinction event. Tyrannosaurus had a massive skull and a long heavy tail."
-  // },
-  // {
-  //   "id": 16,
-  //   "name": "Utahraptor",
-  //   "pronunciation": "YOO-tah-RAP-tor",
-  //   "meaningOfName": "Utah predator",
-  //   "diet": "carnivorous",
-  //   "length": "6m",
-  //   "period": "Early Cretaceous",
-  //   "mya": "112-100",
-  //   "info": "Found in the USA, Utahraptor resembled velociraptor but much larger, prompting Robert T. Bakker to pronounce it 'Spielberg's raptor' due to the velociraptors in the movie <em>Jurassic Park</em> being portrayed much larger than their historical counterparts."
-  // },
-  // {
-  //   "id": 17,
-  //   "name": "Vulcanodon",
-  //   "pronunciation": "vul-ka-oh-don",
-  //   "meaningOfName": "vulcano tooth",
-  //   "diet": "herbivorous",
-  //   "length": "6.5m",
-  //   "period": "Early Jurassic",
-  //   "mya": "183-175",
-  //   "info": "Vulcanodon was a primitive sauropod that lived in southern Africa."
-  // },
-  // {
-  //   "id": 18,
-  //   "name": "Xenoceratops",
-  //   "pronunciation": "ZEE-no-SEH-ruh-tops",
-  //   "meaningOfName": "alien horned face",
-  //   "diet": "herbivorous",
-  //   "length": "6m",
-  //   "period": "Early Cretaceous",
-  //   "mya": "78.5-77.5",
-  //   "info": "Xenoceratops had horns and a bony frill with elborate ornamentation of projections, knobs, and spikes."
-  // },
-  // {
-  //   "id": 19,
-  //   "name": "Zephyrosaurus",
-  //   "pronunciation": "ZEF-ear-ro-SORE-us",
-  //   "meaningOfName": "West wind lizard",
-  //   "diet": "herbivorous",
-  //   "length": "1.8m",
-  //   "period": "Early Cretaceous",
-  //   "mya": "120-110",
-  //   "info": "An ornithopod dinosaur known only by a partial skull and postcranial fragments, not much about Zephyrosaurus has been discovered."
-  // }
 ]);
