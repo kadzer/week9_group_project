@@ -9,7 +9,7 @@ GridView.prototype.bindEvents = function () {
   PubSub.subscribe('Dinosaurs:data-loaded', (event) => {
     this.render(event.detail);
     this.createListElement(event.detail);
-    const nameElement = document.querySelector('#dino_names');
+    const nameElement = document.querySelector('#nav-bar');
     nameElement.addEventListener('click', (event) => {
       const selectedName = event.target.innerText;
       PubSub.publish('GridView:Change', selectedName);
@@ -31,8 +31,7 @@ GridView.prototype.render = function (dinosaurs) {
 };
 
 GridView.prototype.createListElement = function (dinosaurs) {
-  const namesList = document.createElement('div');
-  namesList.id = 'dino_names';
+  const namesList = document.querySelector('#nav-bar');
   this.container.appendChild(namesList);
   dinosaurs.forEach((dinosaur, index) => {
     const option = this.createNamesElement(dinosaur, index);
