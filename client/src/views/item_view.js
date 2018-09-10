@@ -25,23 +25,9 @@ ItemView.prototype.render = function (dinosaur) {
   const name = this.createHeading(dinosaur.name);
   dinosaurCard.appendChild(name);
 
-  // const pronunciation = this.createDetail('Pronunciation', dinosaur.pronunciation);
-  // dinosaurCard.appendChild(pronunciation);
-  //
-  // const meaningOfName = this.createDetail('Meaning Of Name', dinosaur.meaningOfName);
-  // dinosaurCard.appendChild(meaningOfName);
-  //
-  // const diet = this.createDetail('Diet', dinosaur.diet);
-  // dinosaurCard.appendChild(diet);
-  //
-  // const length = this.createDetail('Length', dinosaur.length);
-  // dinosaurCard.appendChild(length);
-  //
-  // const period = this.createTextDetail(`This Dinosaur lived during the ${dinosaur.period} period which was ${dinosaur.mya} million years ago.`);
-  // dinosaurCard.appendChild(period);
-  //
-  // const info = this.createDetail('Fun Fact', dinosaur.info);
-  // dinosaurCard.appendChild(info);
+  const picture = this.createPicture(dinosaur.picture);
+  dinosaurCard.appendChild(picture);
+
 
   dinosaurContainer.appendChild(dinosaurCard);
   this.container.appendChild(dinosaurContainer);
@@ -64,6 +50,12 @@ ItemView.prototype.createTextDetail = function (textContent) {
   const textDetail = document.createElement('p');
   textDetail.textContent = textContent;
   return textDetail;
+};
+
+ItemView.prototype.createPicture = function (image) {
+  const picture = document.createElement('img');
+  picture.src = image;
+  return picture;
 };
 
 
