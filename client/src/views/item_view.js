@@ -1,6 +1,6 @@
 const PubSub = require('../helpers/pub_sub.js');
 
-const ItemView = function (container) {
+const ItemView = function (container, dinosaur) {
   this.container = container;
 };
 //
@@ -17,28 +17,31 @@ ItemView.prototype.render = function (dinosaur) {
   const dinosaurContainer = document.createElement('div');
   dinosaurContainer.id = 'dinosaur';
 
-  const name = this.createHeading(dinosaur.name);
-  dinosaurContainer.appendChild(name);
+  const dinosaurCard = document.createElement('div');
+  dinosaurCard.setAttribute('class', 'card');
 
+  const name = this.createHeading(dinosaur.name);
+  dinosaurCard.appendChild(name);
 
   // const pronunciation = this.createDetail('Pronunciation', dinosaur.pronunciation);
-  // dinosaurContainer.appendChild(pronunciation);
+  // dinosaurCard.appendChild(pronunciation);
   //
   // const meaningOfName = this.createDetail('Meaning Of Name', dinosaur.meaningOfName);
-  // dinosaurContainer.appendChild(meaningOfName);
+  // dinosaurCard.appendChild(meaningOfName);
   //
   // const diet = this.createDetail('Diet', dinosaur.diet);
-  // dinosaurContainer.appendChild(diet);
+  // dinosaurCard.appendChild(diet);
   //
   // const length = this.createDetail('Length', dinosaur.length);
-  // dinosaurContainer.appendChild(length);
+  // dinosaurCard.appendChild(length);
   //
   // const period = this.createTextDetail(`This Dinosaur lived during the ${dinosaur.period} period which was ${dinosaur.mya} million years ago.`);
-  // dinosaurContainer.appendChild(period);
+  // dinosaurCard.appendChild(period);
   //
   // const info = this.createDetail('Fun Fact', dinosaur.info);
-  // dinosaurContainer.appendChild(info);
+  // dinosaurCard.appendChild(info);
 
+  dinosaurContainer.appendChild(dinosaurCard);
   this.container.appendChild(dinosaurContainer);
 
 };
