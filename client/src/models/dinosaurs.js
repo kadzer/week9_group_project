@@ -10,6 +10,7 @@ const Dinosaurs = function (url) {
 Dinosaurs.prototype.bindEvents = function () {
   PubSub.subscribe('GridView:Change', (event) => {
     const dinoName = event.detail;
+    console.log(event.detail);
     this.findByName(dinoName);
   })
 };
@@ -26,10 +27,15 @@ Dinosaurs.prototype.getData = function () {
 };
 
 Dinosaurs.prototype.findByName = function (dinoName) {
+  console.log(dinoName);
   const allDinos = this.allDinos;
-  const result = allDinos.find(dino => dino.name === dinoName);
+  console.log(allDinos);
+
+
+  const result = allDinos.find((dino) => {
+
+    return dino.name === dinoName.trim()});
   PubSub.publish('Dinosaurs:found-dino', result);
   console.log(result);
-};
-
+}
 module.exports = Dinosaurs;

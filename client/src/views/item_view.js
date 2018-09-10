@@ -8,9 +8,11 @@ ItemView.prototype.bindEvents = function () {
   const gridElements = document.querySelectorAll('.card');
   gridElements.forEach((element) => {
     element.addEventListener('click', (event) => {
-      const selectedDinosaur = event.target.innerText;
-      PubSub.publish('GridView:Change', selectedDinosaur);
+      const selectedDinosaur = event.target.parentElement.innerText;
+
       console.log(selectedDinosaur);
+      
+      PubSub.publish('GridView:Change', selectedDinosaur);
     })
   });
 }
@@ -55,6 +57,7 @@ ItemView.prototype.createTextDetail = function (textContent) {
 ItemView.prototype.createPicture = function (image) {
   const picture = document.createElement('img');
   picture.src = image;
+  picture.classList.add("dino_image");
   return picture;
 };
 

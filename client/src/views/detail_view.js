@@ -17,6 +17,9 @@ DetailView.prototype.render = function (dinosaur) {
   const dinosaurContainer = document.querySelector('#dinosaurs')
   dinosaurContainer.innerHTML = ""
 
+  const picture = this.createPicture(dinosaur.picture);
+  dinosaurContainer.appendChild(picture);
+
   const name = this.createHeading(dinosaur.name);
   dinosaurContainer.appendChild(name);
 
@@ -56,7 +59,14 @@ DetailView.prototype.createTextDetail = function (textContent) {
   const textDetail = document.createElement('p');
   textDetail.textContent = textContent;
   return textDetail;
-}
+};
+
+DetailView.prototype.createPicture = function (image) {
+  const picture = document.createElement('img');
+  picture.src = image;
+  picture.classList.add("dino_image");
+  return picture;
+};
 
 
 
