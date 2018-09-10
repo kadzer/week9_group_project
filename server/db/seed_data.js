@@ -97,7 +97,7 @@ db.dinoCollection.insertMany([
     "mya": "72-65",
     "info": "When threatened by predators, Triceratops probably charged into its enemy like the modern-day rhinoceros does. Triceratops was probably a herding animal, like the other ceratopsians. T. rex probably ate dinosaurs like Triceratops.",
     "picture": "images/Triceratops.png"
-  }
+  },
   {
     "id": 9,
     "name": "Tyrannosaurus",
