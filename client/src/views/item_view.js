@@ -11,7 +11,7 @@ ItemView.prototype.bindEvents = function () {
       const selectedDinosaur = event.target.parentElement.innerText;
 
       console.log(selectedDinosaur);
-      
+
       PubSub.publish('GridView:Change', selectedDinosaur);
     })
   });
@@ -42,17 +42,6 @@ ItemView.prototype.createHeading = function (textContent) {
   return heading;
 };
 
-ItemView.prototype.createDetail = function (label, text) {
-  const detail = document.createElement('p');
-  detail.textContent = `${label}${text}`;
-  return detail;
-};
-
-ItemView.prototype.createTextDetail = function (textContent) {
-  const textDetail = document.createElement('p');
-  textDetail.textContent = textContent;
-  return textDetail;
-};
 
 ItemView.prototype.createPicture = function (image) {
   const picture = document.createElement('img');
