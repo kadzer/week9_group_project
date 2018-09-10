@@ -3,15 +3,17 @@ const PubSub = require('../helpers/pub_sub.js');
 const ItemView = function (container, dinosaur) {
   this.container = container;
 };
-//
-// ItemView.prototype.bindEvents = function () {
-//   const gridElement = document.querySelector('#dinosaur');
-//   gridElement.addEventListener('click', (event) => {
-//     const selectedIndex = event.target.value;
-//     PubSub.publish('GridView:Change', selectedIndex);
-//     console.log(event);
-//   });
-// };
+
+ItemView.prototype.bindEvents = function () {
+  const gridElements = document.querySelectorAll('.card');
+  gridElements.forEach((element) => {
+    element.addEventListener('click', (event) => {
+      const selectedDinosaur = event.target.innerText;
+      PubSub.publish('GridView:Change', selectedDinosaur);
+      console.log(selectedDinosaur);
+    })
+  });
+}
 
 ItemView.prototype.render = function (dinosaur) {
   const dinosaurContainer = document.createElement('div');
@@ -43,10 +45,7 @@ ItemView.prototype.render = function (dinosaur) {
 
   dinosaurContainer.appendChild(dinosaurCard);
   this.container.appendChild(dinosaurContainer);
-
 };
-
-
 
 
 ItemView.prototype.createHeading = function (textContent) {
@@ -66,8 +65,6 @@ ItemView.prototype.createTextDetail = function (textContent) {
   textDetail.textContent = textContent;
   return textDetail;
 };
-
-
 
 
 module.exports = ItemView;

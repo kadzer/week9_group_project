@@ -8,9 +8,11 @@ document.addEventListener('DOMContentLoaded', () => {
   dinosaurs.getData();
   dinosaurs.bindEvents();
 
+
   const dinoContainer = document.querySelector('div#dinosaurs');
   const dinoGridView = new GridView(dinoContainer);
   dinoGridView.bindEvents();
+  // dinoGridView.eventTest();
 
   // dinosaurs.getData();
   // const itemGrid = new ItemView;
