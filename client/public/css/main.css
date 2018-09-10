@@ -5,3 +5,45 @@
  margin: 50px 0 0 0;
  border: 10px;
 }
+
+title {
+ margin: 100px 300px;
+ text-align: center;
+ display: inline-block;
+ transition: .5s;
+ float: left;
+
+}
+
+.title span {
+ background: white;
+ width: 75px;
+ height: 75px;
+ display: block;
+ line-height: 80px;
+ font-size: 30px;
+ float: left;
+ transition: .5s;
+}
+
+/* Odd and even are keywords that can be used to match child elements
+whose index is odd  */
+.title:hover span:nth-child(odd) {
+ transform: skewY(-15deg);
+ /* rgba - how opaque shadow is */
+ box-shadow: 0 60px 20px rgba(10, 50, 70, .1);
+}
+.title:hover span:nth-child(even) {
+ transform: skewY(15deg);
+ /* rgba - how opaque shadow is */
+ box-shadow: 0 60px 20px rgba(0, 0, 0, .1);
+}
+
+.title:hover {
+ /* rotates cards on x axist to turn cards */
+ transform: rotateX(35deg);
+}
+
+.title span#1 {
+ color: blue;
+}
