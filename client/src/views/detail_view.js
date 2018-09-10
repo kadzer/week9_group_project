@@ -1,16 +1,28 @@
 const PubSub = require('../helpers/pub_sub.js');
 
 const DetailView = function (container) {
-  this.container
+  this.container = container
+
 };
 
-// DetailView.prototype.bindEvents = function () {
-//
-// }
+DetailView.prototype.bindEvents = function () {
+  PubSub.subscribe('Dinosaurs:found-dino', (event) => {
+    this.render(event.detail);
+    this.createHeading(event.detail);
+    this.createDetail(event.detail);
+    this.createTextDetail(event.detail);
+  })
+};
+
 
 
 DetailView.prototype.render = function (dinosaur) {
   const dinosaurContainer = document.createElement('div');
+  var div = document.querySelector('div.Right')
+  div.innerHTML = ""
+  div.appendChild(dinosaurContainer)
+
+
   dinosaurContainer.id = 'dinosaur';
 
   const name = this.createHeading(dinosaur.name);
@@ -35,6 +47,7 @@ DetailView.prototype.render = function (dinosaur) {
   dinosaurContainer.appendChild(info);
 
   this.container.appendChild(dinosaurContainer);
+  console.log(this.container);
 };
 
 DetailView.prototype.createHeading = function (textContent) {
@@ -45,7 +58,7 @@ DetailView.prototype.createHeading = function (textContent) {
 
 DetailView.prototype.createDetail = function (label, text) {
   const detail = document.createElement('p');
-  detail.textContent = `${label}${text}`;
+  detail.textContent = `${label} ${text}`;
   return detail;
 };
 

@@ -61,7 +61,6 @@ db.dinoCollection.insertMany([
     "mya": "76-74",
     "info": "Found in Canada and the USA, Parasaurolophus was a hadrosaur most famous for its long, elaborate cranial crest.",
     "picture": "images/Parasaurolophus.png"
-
   },
   {
     "id": 6,
@@ -74,7 +73,6 @@ db.dinoCollection.insertMany([
     "mya": "112-97",
     "info": "Spinosaurus was one of the largest carnivorous dinosaurs to walk the Earth. Its diet consisted mostly of fish and the large spines on its back likely formed a sail.",
     "picture": "images/Spinosaurus.png"
-
   },
   {
     "id": 7,
@@ -87,23 +85,9 @@ db.dinoCollection.insertMany([
     "mya": "156-140",
     "info": "Stegosaurus had 17 bony plates that were embedded in its back - the plates ran along the Stegosaurus' back and tail in two rows, and the plates alternated in alignment. The largest of these triangular plates was about 2.5 ft (76 cm) tall and just as long. Stegosaurus also had spikes at the end of its flexible tail (these are called thagomizers).",
     "picture": "images/Stegosaurus.png"
-
   },
   {
     "id": 8,
-    "name": "Stegosaurus",
-    "pronunciation": "STEG-o-SAWR-us",
-    "meaningOfName": "'roof lizard' or 'plated lizard'",
-    "diet": "Herbivore",
-    "length": "9m",
-    "period": "Late Jurassic period",
-    "mya": "156-140",
-    "info": "Stegosaurus had 17 bony plates that were embedded in its back - the plates ran along the Stegosaurus' back and tail in two rows, and the plates alternated in alignment. The largest of these triangular plates was about 2.5 ft (76 cm) tall and just as long. Stegosaurus also had spikes at the end of its flexible tail (these are called thagomizers).",
-    "picture": "images/Stegosaurus.png"
-
-  },
-  {
-    "id": 9,
     "name": "Triceratops",
     "pronunciation": "try-SER-a-tops",
     "meaningOfName": "three-horned face",
@@ -113,6 +97,17 @@ db.dinoCollection.insertMany([
     "mya": "72-65",
     "info": "When threatened by predators, Triceratops probably charged into its enemy like the modern-day rhinoceros does. Triceratops was probably a herding animal, like the other ceratopsians. T. rex probably ate dinosaurs like Triceratops.",
     "picture": "images/Triceratops.png"
-
+  }
+  {
+    "id": 9,
+    "name": "Tyrannosaurus",
+    "pronunciation": "tie-RAN-oh-sore-us",
+    "meaningOfName": "tyrant lizard",
+    "diet": "carnivorous",
+    "length": "12m",
+    "period": "Late Cretaceous",
+    "mya": "68-66",
+    "info": "Tyrannosaurus is well-represented in both fiction and history with over 50 specimens discovered. It and was one of the last non-avian dinosaurs to exist before the extinction event. Tyrannosaurus had a massive skull and a long heavy tail.",
+    "picture": "images/Tyrannosaurus.png"
   }
 ]);
