@@ -14,8 +14,20 @@ GridView.prototype.bindEvents = function () {
       const selectedName = event.target.innerText;
       PubSub.publish('GridView:Change', selectedName);
     });
-  });
+    this.handleTitleClick();
+});
 };
+
+GridView.prototype.handleTitleClick = function () {
+  const titleSelector = document.querySelector('.title');
+  titleSelector.addEventListener('click', (event) => {
+    console.log(event);
+    // this.bindEvents();
+    
+
+});
+};
+
 
 
 GridView.prototype.render = function (dinosaurs) {

@@ -8,7 +8,8 @@ const DetailView = function (container) {
 DetailView.prototype.bindEvents = function () {
   PubSub.subscribe('Dinosaurs:found-dino', (event) => {
     this.render(event.detail);
-    console.log(event.detail);
+
+    // console.log(event.detail);
   })
 };
 
