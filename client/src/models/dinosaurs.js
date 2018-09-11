@@ -14,22 +14,21 @@ Dinosaurs.prototype.bindEvents = function () {
   })
 };
 
-// getData publishes seeded data
 Dinosaurs.prototype.getData = function () {
   this.request.get()
   .then((dinosaurs) => {
     this.allDinos = dinosaurs;
     PubSub.publish('Dinosaurs:data-loaded', dinosaurs);
-    // console.log(this.allDinos);
   })
   .catch(console.error);
 };
 
 Dinosaurs.prototype.findByName = function (dinoName) {
   const allDinos = this.allDinos;
-  const result = allDinos.find(dino => dino.name === dinoName);
+  const result = allDinos.find((dino) => {
+    return dino.name === dinoName
+  });
   PubSub.publish('Dinosaurs:found-dino', result);
-  console.log(result);
 };
 
 module.exports = Dinosaurs;
