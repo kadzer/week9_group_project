@@ -29,6 +29,7 @@ GridView.prototype.renderDinoGrid = function (dinosaurs) {
 GridView.prototype.createButton = function (dinosaurs) {
   const createButton = document.createElement("BUTTON");
   createButton.id = 'timelineButton';
+  createButton.innerHTML = 'See Dino Timeline'
   this.container.appendChild(createButton);
   createButton.addEventListener('click', (event) => {
     PubSub.publish('GridView:timelineClick', dinosaurs);

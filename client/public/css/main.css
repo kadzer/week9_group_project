@@ -198,6 +198,10 @@ div#left-container {
 
 div#right-container {
     width: 12.5rem;
+
+    font-family: 'Luckiest Guy', cursive;
+    font-size: 20px;
+    text-align: center;
 }
 
 div#left-container:after {
@@ -227,6 +231,11 @@ h3#timelineHeading
 
 #timelineButton
 {
-  height: 20px;
-  width: 50px;
+  display: flex;
+  justify-content: center;
+  height: 50px;
+  width: 200px;
+font-size: 20px;
+font-family: 'Luckiest Guy', cursive;
+background-color: darkcyan
 }
