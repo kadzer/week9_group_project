@@ -81,7 +81,7 @@ db.dinoCollection.insertMany([
     "meaningOfName": "'roof lizard' or 'plated lizard'",
     "diet": "Herbivore",
     "length": "9m",
-    "period": "Late Jurassic period",
+    "period": "Late Jurassic",
     "mya": "156-140",
     "info": "Stegosaurus had 17 bony plates that were embedded in its back - the plates ran along the Stegosaurus' back and tail in two rows, and the plates alternated in alignment. The largest of these triangular plates was about 2.5 ft (76 cm) tall and just as long. Stegosaurus also had spikes at the end of its flexible tail (these are called thagomizers).",
     "picture": "images/Stegosaurus.png"
@@ -93,7 +93,7 @@ db.dinoCollection.insertMany([
     "meaningOfName": "three-horned face",
     "diet": "Herbivore",
     "length": "9m",
-    "period": "Late Cretaceous period",
+    "period": "Late Cretaceous",
     "mya": "72-65",
     "info": "When threatened by predators, Triceratops probably charged into its enemy like the modern-day rhinoceros does. Triceratops was probably a herding animal, like the other ceratopsians. T. rex probably ate dinosaurs like Triceratops.",
     "picture": "images/Triceratops.png"
