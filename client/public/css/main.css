@@ -38,6 +38,9 @@ div.all_dinosaurs {
 h3 {
   display: flex;
   justify-content: center;
+  /* font-family: 'Amatic SC', cursive; */
+  font-family: 'Luckiest Guy', cursive;
+  font-size: 30px;
 }
 
 title {
@@ -98,6 +101,8 @@ ul {
   list-style: none;
   line-height: 40px;
   border-radius: 5px;
+  font-family: 'Patrick Hand', cursive;
+  font-weight: bold;
 }
 
 ul li {
@@ -108,6 +113,11 @@ ul li {
   line-height: 40px;
   display: none;
   text-align: center;
+  /* font-family: 'Amatic SC', cursive; */
+  /* font-family: 'Roboto', sans-serif; */
+  /* font-family: 'Luckiest Guy', cursive; */
+  font-family: 'Patrick Hand', cursive;
+  font-weight: bold;
 }
 
 ul li:hover {
@@ -127,4 +137,7 @@ ul:hover li {
 
 p {
   margin-left: 300px;
+  /* font-family: 'Amatic SC', cursive; */
+  /* font-family: 'Patrick Hand', cursive; */
+  font-family: 'Roboto', sans-serif;
 }
