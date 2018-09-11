@@ -28,23 +28,26 @@ DetailView.prototype.render = function (dinosaur) {
   const name = this.createHeading(dinosaur.name);
   dinosaurContainer.appendChild(name);
 
-  const pronunciation = this.createDetail('Pronunciation', dinosaur.pronunciation);
+  const pronunciation = this.createDetail('Pronunciation:  ', dinosaur.pronunciation);
   dinosaurContainer.appendChild(pronunciation);
 
-  const meaningOfName = this.createDetail('Meaning Of Name', dinosaur.meaningOfName);
+  const meaningOfName = this.createDetail('Meaning Of Name:  ', dinosaur.meaningOfName);
   dinosaurContainer.appendChild(meaningOfName);
 
-  const diet = this.createDetail('Diet', dinosaur.diet);
+  const diet = this.createDetail('Diet:  ', dinosaur.diet);
   dinosaurContainer.appendChild(diet);
 
-  const length = this.createDetail('Length', dinosaur.length);
+  const length = this.createDetail('Length:  ', dinosaur.length);
   dinosaurContainer.appendChild(length);
 
   const period = this.createTextDetail(`This Dinosaur lived during the ${dinosaur.period} period which was ${dinosaur.mya} million years ago.`);
   dinosaurContainer.appendChild(period);
 
-  const info = this.createDetail('Fun Fact', dinosaur.info);
+  const info = this.createDetail('Fun Fact:  ', dinosaur.info);
   dinosaurContainer.appendChild(info);
+
+  const mapText = this.createTextDetail('This Dinosaur lived here:  ');
+  dinosaurContainer.appendChild(mapText);
 
   const map = this.createMap(dinosaur.latlng);
   dinosaurContainer.appendChild(map);
@@ -77,7 +80,6 @@ DetailView.prototype.createPicture = function (image) {
 };
 
 DetailView.prototype.createMap = function (coordinates) {
-  console.log(coordinates);
   const map = this.mapWrapper.container;
   return map;
 };
