@@ -8,6 +8,12 @@ const DetailView = function (mapWrapper) {
 DetailView.prototype.bindEvents = function () {
   PubSub.subscribe('Dinosaurs:found-dino', (event) => {
     this.render(event.detail);
+    const audio = event.detail.audio;
+    const image = document.querySelector('img');
+    image.addEventListener('click', (event) => {
+      const sound = this.createAudio(audio);
+      sound.play();
+    })
   })
 };
 
@@ -41,9 +47,7 @@ DetailView.prototype.render = function (dinosaur) {
   dinosaurContainer.appendChild(info);
 
   const map = this.createMap(dinosaur.latlng);
-  console.log(dinosaur.latlng);
   dinosaurContainer.appendChild(map);
-  console.log("Map rendered");
 
 };
 
@@ -76,6 +80,11 @@ DetailView.prototype.createMap = function (coordinates) {
   console.log(coordinates);
   const map = this.mapWrapper.container;
   return map;
+};
+
+DetailView.prototype.createAudio = function (audio) {
+  const sound = new Audio(audio);
+  return sound;
 };
 
 
