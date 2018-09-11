@@ -15,20 +15,15 @@ NaviView.prototype.bindEvents = function () {
   });
 };
 
-NaviView.prototype.createListElement = function (dinosaurs) {
-  const namesList = document.querySelector('#nav-bar');
-  dinosaurs.forEach((dinosaur, index) => {
-    const option = this.createNamesElement(dinosaur, index);
-    namesList.appendChild(option);
-  })
-}
-
-NaviView.prototype.createNamesElement = function (dinosaur, index) {
-  const option = document.createElement('option');
-  option.textContent = dinosaur.name;
-  option.value = index;
-  return option;
-};
+  NaviView.prototype.createListElement = function (dinosaurs) {
+    var ul = document.createElement('ul');
+    document.getElementById("nav-bar").appendChild(ul);
+    dinosaurs.forEach(function(dinosaur){
+      var li = document.createElement('li');
+      ul.appendChild(li);
+			li.innerHTML += dinosaur.name;
+    });
+  };
 
 
 module.exports = NaviView;
