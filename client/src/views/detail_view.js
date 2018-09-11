@@ -2,14 +2,11 @@ const PubSub = require('../helpers/pub_sub.js');
 
 const DetailView = function (container) {
   this.container = container
-
 };
 
 DetailView.prototype.bindEvents = function () {
   PubSub.subscribe('Dinosaurs:found-dino', (event) => {
     this.render(event.detail);
-
-    // console.log(event.detail);
   })
 };
 
