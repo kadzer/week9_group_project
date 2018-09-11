@@ -34,7 +34,7 @@ Dinosaurs.prototype.findByName = function (dinoName) {
 
   const result = allDinos.find((dino) => {
 
-    return dino.name === dinoName.trim()});
+    return dino.name === dinoName});
   PubSub.publish('Dinosaurs:found-dino', result);
   // console.log(result);
 }

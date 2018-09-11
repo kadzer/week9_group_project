@@ -8,7 +8,7 @@ ItemView.prototype.bindEvents = function () {
   const gridElements = document.querySelectorAll('.card');
   gridElements.forEach((element) => {
     element.addEventListener('click', (event) => {
-      const selectedDinosaur = event.target.parentElement.innerText;
+      const selectedDinosaur = event.target.parentElement.textContent;
 
       // console.log(selectedDinosaur);
 
