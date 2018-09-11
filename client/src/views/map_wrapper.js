@@ -11,8 +11,9 @@ MapWrapper.prototype.bindEvents = function () {
     const dinosaur = event.detail;
     const dinoCoordinates = dinosaur.latlng;
     console.log(dinoCoordinates);
-    this.map.setView( dinoCoordinates, 5).addLayer(this.osmLayer);
-    L.marker(dinoCoordinates).addTo(this.map);
+    this.map.setView(dinoCoordinates, 5).addLayer(this.osmLayer);
+    const marker = L.marker(dinoCoordinates)
+    marker.addTo(this.map);
   })
 };
 
