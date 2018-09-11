@@ -5,11 +5,14 @@ body {
 }
 
 .dino_image {
- height: 300px;
- width: 300px;
+display: flex;
+ height: 250px;
+ width: 250px;
  border-radius: 10%;
  margin: auto;
  border: 10px solid darkcyan;
+ flex-direction: row;
+justify-content: flex-end;
 }
 
 div#dino_grid {
@@ -18,6 +21,8 @@ div#dino_grid {
   flex-direction: row;
   flex-wrap: wrap;
   max-width: 1100px;
+  justify-content: flex-end;
+  width: 5;
 }
 
 div.card {
@@ -26,12 +31,16 @@ div.card {
 
 div.all_dinosaurs {
   padding-top: 50px;
-  text-align: center;
+  text-align: left;
+
 }
 
 h3 {
   display: flex;
   justify-content: center;
+  /* font-family: 'Amatic SC', cursive; */
+  font-family: 'Luckiest Guy', cursive;
+  font-size: 30px;
 }
 
 title {
@@ -72,5 +81,63 @@ whose index is odd  */
 }
 
 .title span#1 {
+
  color: blue;
+}
+
+
+#map {
+  height: 500px;
+  width:100%;
+}
+
+ul {
+  position: absolute;
+  z-index: 100;
+  background-color: black;
+  width: 150px;
+  padding: 0;
+  text-align: center;
+  list-style: none;
+  line-height: 40px;
+  border-radius: 5px;
+  font-family: 'Patrick Hand', cursive;
+  font-weight: bold;
+}
+
+ul li {
+  border-radius: 5px;
+  width: 150px;
+  height: 40px;
+  background-color: black;
+  line-height: 40px;
+  display: none;
+  text-align: center;
+  /* font-family: 'Amatic SC', cursive; */
+  /* font-family: 'Roboto', sans-serif; */
+  /* font-family: 'Luckiest Guy', cursive; */
+  font-family: 'Patrick Hand', cursive;
+  font-weight: bold;
+}
+
+ul li:hover {
+  text-decoration: none;
+  background-color: DEEPSKYBLUE;
+}
+
+ul:hover li {
+  display: block;
+}
+
+.title-div {
+  display: flex;
+  justify-content: center; /* align horizontal */
+  align-items: center;
+}
+
+p {
+  margin-left: 300px;
+  /* font-family: 'Amatic SC', cursive; */
+  /* font-family: 'Patrick Hand', cursive; */
+  font-family: 'Roboto', sans-serif;
 }

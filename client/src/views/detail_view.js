@@ -1,11 +1,19 @@
 const PubSub = require('../helpers/pub_sub.js');
+const MapWrapper = require('./map_wrapper.js');
 
-const DetailView = function () {
+const DetailView = function (mapWrapper) {
+  this.mapWrapper = mapWrapper;
 };
 
 DetailView.prototype.bindEvents = function () {
   PubSub.subscribe('Dinosaurs:found-dino', (event) => {
     this.render(event.detail);
+    const audio = event.detail.audio;
+    const image = document.querySelector('img');
+    image.addEventListener('click', (event) => {
+      const sound = this.createAudio(audio);
+      sound.play();
+    })
   })
 };
 
@@ -20,23 +28,29 @@ DetailView.prototype.render = function (dinosaur) {
   const name = this.createHeading(dinosaur.name);
   dinosaurContainer.appendChild(name);
 
-  const pronunciation = this.createDetail('Pronunciation', dinosaur.pronunciation);
+  const pronunciation = this.createDetail('Pronunciation:  ', dinosaur.pronunciation);
   dinosaurContainer.appendChild(pronunciation);
 
-  const meaningOfName = this.createDetail('Meaning Of Name', dinosaur.meaningOfName);
+  const meaningOfName = this.createDetail('Meaning Of Name:  ', dinosaur.meaningOfName);
   dinosaurContainer.appendChild(meaningOfName);
 
-  const diet = this.createDetail('Diet', dinosaur.diet);
+  const diet = this.createDetail('Diet:  ', dinosaur.diet);
   dinosaurContainer.appendChild(diet);
 
-  const length = this.createDetail('Length', dinosaur.length);
+  const length = this.createDetail('Length:  ', dinosaur.length);
   dinosaurContainer.appendChild(length);
 
   const period = this.createTextDetail(`This Dinosaur lived during the ${dinosaur.period} period which was ${dinosaur.mya} million years ago.`);
   dinosaurContainer.appendChild(period);
 
-  const info = this.createDetail('Fun Fact', dinosaur.info);
+  const info = this.createDetail('Fun Fact:  ', dinosaur.info);
   dinosaurContainer.appendChild(info);
+
+  const mapText = this.createTextDetail('This Dinosaur lived here:  ');
+  dinosaurContainer.appendChild(mapText);
+
+  const map = this.createMap(dinosaur.latlng);
+  dinosaurContainer.appendChild(map);
 
 };
 
@@ -63,6 +77,16 @@ DetailView.prototype.createPicture = function (image) {
   picture.src = image;
   picture.classList.add("dino_image");
   return picture;
+};
+
+DetailView.prototype.createMap = function (coordinates) {
+  const map = this.mapWrapper.container;
+  return map;
+};
+
+DetailView.prototype.createAudio = function (audio) {
+  const sound = new Audio(audio);
+  return sound;
 };
 
 
