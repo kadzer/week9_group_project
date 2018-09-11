@@ -107,7 +107,7 @@ ul li {
 
 ul li:hover {
   text-decoration: none;
-  background-color: green;
+  background-color: DEEPSKYBLUE;
 }
 
 ul:hover li {
