@@ -210,3 +210,23 @@ div#left-container:after {
     border-left: 10px solid black;
     transform: translate(-50%);
 }
+
+p#timelineP
+{
+margin: 0;
+margin-top: 15px;
+padding: 0;
+text-align: center;
+}
+
+h3#timelineHeading
+{
+  margin: 0;
+  margin-top: 100px;
+}
+
+#timelineButton
+{
+  height: 20px;
+  width: 50px;
+}

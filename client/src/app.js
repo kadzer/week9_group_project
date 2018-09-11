@@ -29,12 +29,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const periodElement = document.querySelector('#period-select')
   const periodView = new PeriodView(periodElement);
+  periodView.bindEvents();
 
   const timeline = new TimeLine(dinoContainer);
   timeline.bindEvents()
-
-  periodView.bindEvents();
-
-
 
 });

@@ -7,88 +7,123 @@ const Timeline = function (container) {
 };
 
 Timeline.prototype.bindEvents = function () {
-  PubSub.subscribe('Dinosaurs:data-loaded', (event) => {
+  PubSub.subscribe('GridView:timelineClick', (event) => {
     this.render(event.detail);
-
   })
-};
-
-Timeline.prototype.render = function (data) {
-
-
-  this.container.innerHTML = '';
-
-  const dinosaurContainer = document.createElement('div');
-  dinosaurContainer.id = 'container';
-
-  const leftContainer = document.createElement('div');
-  leftContainer.id = 'left-container';
-  dinosaurContainer.appendChild(leftContainer);
-
-  const middleContainer = document.createElement('div');
-  middleContainer.id = 'middle-container';
-  dinosaurContainer.appendChild(middleContainer);
-
-  const rightContainer = document.createElement('div');
-  rightContainer.id = 'right-container';
-  dinosaurContainer.appendChild(rightContainer);
 
 
 
+  Timeline.prototype.render = function (data) {
 
 
+    this.container.innerHTML = '';
+
+    const dinosaurContainer = document.createElement('div');
+    dinosaurContainer.id = 'container';
+
+    const leftContainer = document.createElement('div');
+    leftContainer.id = 'left-container';
+    dinosaurContainer.appendChild(leftContainer);
+
+    const middleContainer = document.createElement('div');
+    middleContainer.id = 'middle-container';
+    dinosaurContainer.appendChild(middleContainer);
+
+    const rightContainer = document.createElement('div');
+    rightContainer.id = 'right-container';
+    dinosaurContainer.appendChild(rightContainer);
+
+    rightContainer.innerHTML = "Click a dinosaur image to get more information "
+
+    // needed to sort dinos by million years ago
+    data.sort(function(a, b) {
+      return b.firstAppeared - a.firstAppeared;
+    });
+
+    var eras = []
 
 
-  rightContainer.innerHTML = "Click a dinosaur image to get more information "
+    data.forEach((dinosaur) => {
 
-
-  data.sort(function(a, b) {
-    return b.firstAppeared - a.firstAppeared;
-  });
-
-  console.log(data);
-
-  var eras = []
-
-
-  data.forEach((dinosaur) => {
-
-    if (!eras.includes(dinosaur.period)) {
-      const era = this.createEra(dinosaur.period)
-      leftContainer.appendChild(era)
-      eras.push(dinosaur.period)
-    }
-
-    const name = this.createHeading(dinosaur.name);
-    leftContainer.appendChild(name);
-
-    const picture = this.createPicture(dinosaur.picture);
-    leftContainer.appendChild(picture);
-
-    picture.addEventListener('click', (event) => {
-
-      rightContainer.innerHTML = ''
+      // didnt want repeat eras
+      if (!eras.includes(dinosaur.period)) {
+        const era = this.createEra(dinosaur.period)
+        leftContainer.appendChild(era)
+        eras.push(dinosaur.period)
+        era.id = `era-${dinosaur.period}`;
+        era.id = era.id.replace(/\s/g, '');
+      }
 
       const name = this.createHeading(dinosaur.name);
-      rightContainer.appendChild(name)
+      leftContainer.appendChild(name);
+
+      const picture = this.createPicture(dinosaur.picture);
+      leftContainer.appendChild(picture);
+
+      picture.addEventListener('click', (event) => {
+
+        rightContainer.innerHTML = ''
+
+        const name = this.createHeading(dinosaur.name);
+        rightContainer.appendChild(name)
+
+        const pronunciation = this.createDetail('Pronunciation:  ', dinosaur.pronunciation);
+        rightContainer.appendChild(pronunciation);
+        pronunciation.id = 'timelineP';
 
 
-    })
+
+        const meaningOfName = this.createDetail('Meaning Of Name:  ', dinosaur.meaningOfName);
+        rightContainer.appendChild(meaningOfName);
+        meaningOfName.id = 'timelineP';
 
 
-  });
+        const diet = this.createDetail('Diet:  ', dinosaur.diet);
+        rightContainer.appendChild(diet);
+        diet.id = 'timelineP';
 
-  this.container.appendChild(dinosaurContainer);
 
-}
+        const length = this.createDetail('Length:  ', dinosaur.length);
+        rightContainer.appendChild(length);
+        length.id = 'timelineP';
+
+
+        const period = this.createTextDetail(`This Dinosaur lived during the ${dinosaur.period} period which was ${dinosaur.mya} million years ago.`);
+        rightContainer.appendChild(period);
+        period.id = 'timelineP';
+
+
+      })
+
+
+    });
+
+    this.container.appendChild(dinosaurContainer);
+
+  }
 
 
 
 
   Timeline.prototype.createHeading = function (textContent) {
     const heading = document.createElement('h3');
+    heading.id = 'timelineHeading';
+
+
     heading.textContent = textContent;
     return heading;
+  };
+
+  Timeline.prototype.createDetail = function (label, text) {
+    const detail = document.createElement('p');
+    detail.textContent = `${label} ${text}`;
+    return detail;
+  };
+
+  Timeline.prototype.createTextDetail = function (textContent) {
+    const textDetail = document.createElement('p');
+    textDetail.textContent = textContent;
+    return textDetail;
   };
 
   Timeline.prototype.createPicture = function (image) {
@@ -106,6 +141,6 @@ Timeline.prototype.render = function (data) {
   };
 
 
+}
 
-
-  module.exports = Timeline;
+module.exports = Timeline;
