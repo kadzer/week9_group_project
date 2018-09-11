@@ -1,6 +1,8 @@
 const PubSub = require('../helpers/pub_sub.js');
+const MapWrapper = require('./map_wrapper.js');
 
-const DetailView = function () {
+const DetailView = function (mapWrapper) {
+  this.mapWrapper = mapWrapper;
 };
 
 DetailView.prototype.bindEvents = function () {
@@ -44,6 +46,8 @@ DetailView.prototype.render = function (dinosaur) {
   const info = this.createDetail('Fun Fact', dinosaur.info);
   dinosaurContainer.appendChild(info);
 
+  const map = this.createMap(dinosaur.latlng);
+  dinosaurContainer.appendChild(map);
 
 };
 
@@ -70,6 +74,12 @@ DetailView.prototype.createPicture = function (image) {
   picture.src = image;
   picture.classList.add("dino_image");
   return picture;
+};
+
+DetailView.prototype.createMap = function (coordinates) {
+  console.log(coordinates);
+  const map = this.mapWrapper.container;
+  return map;
 };
 
 DetailView.prototype.createAudio = function (audio) {

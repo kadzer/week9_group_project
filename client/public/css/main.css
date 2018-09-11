@@ -82,6 +82,12 @@ whose index is odd  */
  color: blue;
 }
 
+
+#map {
+  height: 500px;
+  width:100%;
+}
+
 ul {
   position: absolute;
   z-index: 100;
@@ -92,7 +98,6 @@ ul {
   list-style: none;
   line-height: 40px;
   border-radius: 5px;
-
 }
 
 ul li {
