@@ -17,6 +17,7 @@ NaviView.prototype.bindEvents = function () {
 
   NaviView.prototype.createListElement = function (dinosaurs) {
     var ul = document.createElement('ul');
+    ul.innerHTML = 'Dinosaurs'
     document.getElementById("nav-bar").appendChild(ul);
     dinosaurs.forEach(function(dinosaur){
       var li = document.createElement('li');

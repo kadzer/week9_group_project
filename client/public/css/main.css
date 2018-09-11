@@ -72,5 +72,28 @@ whose index is odd  */
 }
 
 .title span#1 {
+
  color: blue;
+}
+
+ul {
+  background-color: black;
+  width: 200px;
+  list-style: none;
+}
+
+ul li {
+  width: 150px;
+  height: 40px;
+  display: none;
+  text-align: center;
+}
+
+ul li:hover {
+  text-decoration: none;
+  background-color: green;
+}
+
+ul:hover li {
+  display: block;
 }
