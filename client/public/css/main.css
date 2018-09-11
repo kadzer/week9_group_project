@@ -92,6 +92,7 @@ whose index is odd  */
 }
 
 ul {
+  margin-top: -40px;
   position: absolute;
   z-index: 100;
   background-color: black;
@@ -140,4 +141,31 @@ p {
   /* font-family: 'Amatic SC', cursive; */
   /* font-family: 'Patrick Hand', cursive; */
   font-family: 'Roboto', sans-serif;
+}
+
+.period-list {
+  display: flex;
+  justify-content: flex-end;
+
+}
+
+select#period-select {
+  background: darkcyan;
+  color: black;
+  width: 250px;
+  border: none;
+  font-size: 20px;
+  box-shadow: 0 5px 25px black;
+  outline: none;
+}
+
+label {
+  font-size: 20px;
+  font-family: 'Patrick Hand', cursive;
+}
+
+.select-option {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 100px;
 }
