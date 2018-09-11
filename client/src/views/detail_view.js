@@ -6,6 +6,12 @@ const DetailView = function () {
 DetailView.prototype.bindEvents = function () {
   PubSub.subscribe('Dinosaurs:found-dino', (event) => {
     this.render(event.detail);
+    const audio = event.detail.audio;
+    const image = document.querySelector('img');
+    image.addEventListener('click', (event) => {
+      const sound = this.createAudio(audio);
+      sound.play();
+    })
   })
 };
 
@@ -38,6 +44,7 @@ DetailView.prototype.render = function (dinosaur) {
   const info = this.createDetail('Fun Fact', dinosaur.info);
   dinosaurContainer.appendChild(info);
 
+
 };
 
 DetailView.prototype.createHeading = function (textContent) {
@@ -63,6 +70,11 @@ DetailView.prototype.createPicture = function (image) {
   picture.src = image;
   picture.classList.add("dino_image");
   return picture;
+};
+
+DetailView.prototype.createAudio = function (audio) {
+  const sound = new Audio(audio);
+  return sound;
 };
 
 
