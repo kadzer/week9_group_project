@@ -78,13 +78,20 @@ whose index is odd  */
 
 ul {
   background-color: black;
-  width: 200px;
+  width: 150px;
+  padding: 0;
+  text-align: center;
   list-style: none;
+  line-height: 40px;
+  opacity: 20;
+
 }
 
 ul li {
   width: 150px;
   height: 40px;
+  background-color: black;
+  line-height: 40px;
   display: none;
   text-align: center;
 }
@@ -96,4 +103,10 @@ ul li:hover {
 
 ul:hover li {
   display: block;
+}
+
+.title-div {
+  display: flex;
+  justify-content: center; /* align horizontal */
+  align-items: center;
 }
