@@ -16,7 +16,7 @@ db.dinoCollection.insertMany([
     "latlng": [
       38.736946,
       -9.142685
-    ]
+    ],
     "audio": "audio/roar.mp3"
   },
   {
@@ -33,7 +33,7 @@ db.dinoCollection.insertMany([
     "latlng": [
       38.736946,
       -9.142685
-    ]
+    ],
     "audio": "audio/roar.mp3"
   },
   {
@@ -50,7 +50,7 @@ db.dinoCollection.insertMany([
     "latlng": [
       38.736946,
       -9.142685
-    ]
+    ],
     "audio": "audio/roar.mp3"
   },
   {
@@ -67,7 +67,7 @@ db.dinoCollection.insertMany([
     "latlng": [
       38.736946,
       -9.142685
-    ]
+    ],
     "audio": "audio/roar.mp3"
   },
   {
@@ -84,7 +84,7 @@ db.dinoCollection.insertMany([
     "latlng": [
       38.736946,
       -9.142685
-    ]
+    ],
     "audio": "audio/roar.mp3"
   },
   {
@@ -101,7 +101,7 @@ db.dinoCollection.insertMany([
     "latlng": [
       38.736946,
       -9.142685
-    ]
+    ],
     "audio": "audio/roar.mp3"
   },
   {
@@ -118,7 +118,7 @@ db.dinoCollection.insertMany([
     "latlng": [
       38.736946,
       -9.142685
-    ]
+    ],
     "audio": "audio/roar.mp3"
   },
   {
@@ -135,7 +135,7 @@ db.dinoCollection.insertMany([
     "latlng": [
       38.736946,
       -9.142685
-    ]
+    ],
     "audio": "audio/roar.mp3"
   },
   {
@@ -152,7 +152,7 @@ db.dinoCollection.insertMany([
     "latlng": [
       38.736946,
       -9.142685
-    ]
+    ],
     "audio": "audio/roar.mp3"
   }
 ]);
