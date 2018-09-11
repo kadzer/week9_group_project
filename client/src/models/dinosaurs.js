@@ -13,10 +13,10 @@ Dinosaurs.prototype.bindEvents = function () {
     const dinoName = event.detail;
     this.findByName(dinoName);
   })
-  // PubSub.subscribe('PeriodView:Change', (event) => {
-  // const dinoName = event.detail;
-  // this.findByName(dinoName);
-// });
+  PubSub.subscribe('PeriodView:Change', (event) => {
+  const periodIndex = event.detail;
+  this.publishDinosByPeriod(periodIndex);
+});
 };
 
 Dinosaurs.prototype.getData = function () {
