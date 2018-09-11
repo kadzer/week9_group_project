@@ -38,6 +38,9 @@ DetailView.prototype.render = function (dinosaur) {
   const info = this.createDetail('Fun Fact', dinosaur.info);
   dinosaurContainer.appendChild(info);
 
+  const audio = this.createAudio(dinosaur.audio);
+  dinosaurContainer.appendChild(audio);
+
 };
 
 DetailView.prototype.createHeading = function (textContent) {
@@ -63,6 +66,21 @@ DetailView.prototype.createPicture = function (image) {
   picture.src = image;
   picture.classList.add("dino_image");
   return picture;
+};
+
+DetailView.prototype.createAudio = function (audio) {
+  const button = document.createElement('img');
+  button.src = 'images/play.png';
+  button.classList.add("play");
+  button.addEventListener('click', (event) => {
+    const sound = document.createElement('audio');
+    audio.src = audio;
+    console.log(audio);
+    audio.play();
+
+  })
+  return button;
+  return sound;
 };
 
 
