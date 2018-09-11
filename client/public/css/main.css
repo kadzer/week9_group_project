@@ -5,11 +5,14 @@ body {
 }
 
 .dino_image {
- height: 300px;
- width: 300px;
+display: flex;
+ height: 250px;
+ width: 250px;
  border-radius: 10%;
  margin: auto;
  border: 10px solid darkcyan;
+ flex-direction: row;
+justify-content: flex-end;
 }
 
 div#dino_grid {
@@ -18,6 +21,8 @@ div#dino_grid {
   flex-direction: row;
   flex-wrap: wrap;
   max-width: 1100px;
+  justify-content: flex-end;
+  width: 5;
 }
 
 div.card {
@@ -26,7 +31,8 @@ div.card {
 
 div.all_dinosaurs {
   padding-top: 50px;
-  text-align: center;
+  text-align: left;
+
 }
 
 h3 {
@@ -77,17 +83,20 @@ whose index is odd  */
 }
 
 ul {
+  position: absolute;
+  z-index: 100;
   background-color: black;
   width: 150px;
   padding: 0;
   text-align: center;
   list-style: none;
   line-height: 40px;
-  opacity: 20;
+  border-radius: 5px;
 
 }
 
 ul li {
+  border-radius: 5px;
   width: 150px;
   height: 40px;
   background-color: black;
@@ -109,4 +118,8 @@ ul:hover li {
   display: flex;
   justify-content: center; /* align horizontal */
   align-items: center;
+}
+
+p {
+  margin-left: 300px;
 }
