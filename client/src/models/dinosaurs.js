@@ -54,16 +54,16 @@ Dinosaurs.prototype.uniquePeriodList = function () {
   });
 }
 
-Dinosaurs.prototype.dinosByPeriod = function (regionIndex) {
-  const selectedRegion = this.regions[regionIndex];
-  return this.munrosData.filter((munro) => {
-    return munro.region === selectedRegion;
+Dinosaurs.prototype.dinosByPeriod = function (periodIndex) {
+  const selectedPeriod = this.dinoPeriods[periodIndex];
+  return this.allDinos.filter((dino) => {
+    return dino.period === selectedPeriod;
   });
 };
-//
-// Dinosaurs.prototype.publishMunrosByRegion = function (regionIndex) {
-//   const foundMunros = this.countriesByRegion(regionIndex);
-//   PubSub.publish('Munros:munros-ready', foundMunros);
-// };
+
+Dinosaurs.prototype.publishDinosByPeriod = function (periodIndex) {
+  const foundDinos = this.dinosByPeriod(periodIndex);
+  PubSub.publish('Dinosaurs:data-loaded', foundDinos);
+};
 
 module.exports = Dinosaurs;
