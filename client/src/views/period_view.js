@@ -13,7 +13,7 @@ PeriodView.prototype.bindEvents = function () {
   });
   this.selectElement.addEventListener('change', (event) => {
     const selectedIndex = event.target.value;
-    PubSub.publish('PeriodView:change', selectedIndex);
+    PubSub.publish('PeriodView:Change', selectedIndex);
   });
 };
 

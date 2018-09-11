@@ -14,8 +14,8 @@ Dinosaurs.prototype.bindEvents = function () {
     this.findByName(dinoName);
   })
   PubSub.subscribe('PeriodView:Change', (event) => {
-  const dinoName = event.detail;
-  this.findByName(dinoName);
+  const periodIndex = event.detail;
+  this.publishDinosByPeriod(periodIndex);
 });
 };
 
