@@ -2,17 +2,19 @@ body {
   background-image: url(../images/background.png);
   background-attachment: fixed;
   color: white;
+  overflow-x: hidden;
+
 }
 
 .dino_image {
-display: flex;
- height: 250px;
- width: 250px;
- border-radius: 10%;
- margin: auto;
- border: 10px solid darkcyan;
- flex-direction: row;
-justify-content: flex-end;
+  display: flex;
+  height: 250px;
+  width: 250px;
+  border-radius: 10%;
+  margin: auto;
+  border: 10px solid darkcyan;
+  flex-direction: row;
+  justify-content: flex-end;
 }
 
 div#dino_grid {
@@ -44,45 +46,45 @@ h3 {
 }
 
 title {
- margin: 100px 300px;
- text-align: center;
- display: inline-block;
- transition: .5s;
- float: left;
+  margin: 100px 300px;
+  text-align: center;
+  display: inline-block;
+  transition: .5s;
+  float: left;
 
 }
 
 .title span {
- width: 75px;
- height: 75px;
- justify-content: center;
- line-height: 80px;
- font-size: 30px;
- float: left;
- transition: .5s;
+  width: 75px;
+  height: 75px;
+  justify-content: center;
+  line-height: 80px;
+  font-size: 30px;
+  float: left;
+  transition: .5s;
 }
 
 /* Odd and even are keywords that can be used to match child elements
 whose index is odd  */
 .title:hover span:nth-child(odd) {
- transform: skewY(-15deg);
- /* rgba - how opaque shadow is */
- box-shadow: 0 60px 20px rgba(10, 50, 70, .1);
+  transform: skewY(-15deg);
+  /* rgba - how opaque shadow is */
+  box-shadow: 0 60px 20px rgba(10, 50, 70, .1);
 }
 .title:hover span:nth-child(even) {
- transform: skewY(15deg);
- /* rgba - how opaque shadow is */
- box-shadow: 0 60px 20px rgba(0, 0, 0, .1);
+  transform: skewY(15deg);
+  /* rgba - how opaque shadow is */
+  box-shadow: 0 60px 20px rgba(0, 0, 0, .1);
 }
 
 .title:hover {
- /* rotates cards on x axist to turn cards */
- transform: rotateX(35deg);
+  /* rotates cards on x axist to turn cards */
+  transform: rotateX(35deg);
 }
 
 .title span#1 {
 
- color: blue;
+  color: blue;
 }
 
 
@@ -143,32 +145,21 @@ p {
 }
 
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 /*This just stops me getting horizontal scrolling if anything overflows the width*/
 body {
-    overflow-x: hidden;
+  overflow-x: hidden;
 }
 /*Just removing default browser padding/margin*/
 html,
 body {
-    padding: 0;
-    margin: 0;
-    color: #ebebeb;
+  padding: 0;
+  margin: 0;
+  color: #ebebeb;
 }
-/*Flexbox gives us the flexiness we need. The top just stays put as there is no scrolling on the body due to the page never exceeding viewport height*/
-.Top {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: darkgreen;
-    font-size: 3rem;
-    position: relative;
-    z-index: 10;
-    height: 100px;
-}
-/*This is our main wrapping element, it's made 100vh high to ensure it is always the correct size and then moved into place and padded with negative margin and padding*/
-.Container {
+
+div#container {
     display: flex;
     overflow: hidden;
     height: 100vh;
@@ -182,32 +173,40 @@ body {
 /*All the scrollable sections should overflow and be whatever height they need to be. As they are flex-items (due to being inside a flex container) they could be made to stretch full height at all times if needed.
 WebKit inertia scrolling is being added here for any present/future devices that are able to make use of it.
 */
-.Left,
-.Middle,
-.Right {
+div#left-container,
+div#right-container {
+    flex-grow: 1;
     overflow: auto;
     height: auto;
     padding: .5rem;
     -webkit-overflow-scrolling: touch;
     -ms-overflow-style: none;
+    z-index: 1;
+
 }
 /*Entirely optional – just wanted to remove the scrollbar on WebKit browsers as I find them ugly*/
-.Left::-webkit-scrollbar,
-.Middle::-webkit-scrollbar,
-.Right::-webkit-scrollbar {
+div#left-container::-webkit-scrollbar,
+div#right-container::-webkit-scrollbar {
     display: none;
 }
 /*  Left and Right are set sizes while the Middle is set to flex one so it occupies all remaining space. This could be set as a width too if prefereable, perhaps using calc.*/
 div#left-container {
     width: 12.5rem;
-    background-color: indigo;
+
 }
 
-div#middle-container {
-    flex: 1;
-}
 
 div#right-container {
     width: 12.5rem;
-    background-color: violet;
+}
+
+div#left-container:after {
+    content:"";
+    position: absolute;
+    margin-top: 100px;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    border-left: 10px solid black;
+    transform: translate(-50%);
 }

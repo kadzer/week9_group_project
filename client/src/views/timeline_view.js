@@ -9,6 +9,7 @@ const Timeline = function (container) {
 Timeline.prototype.bindEvents = function () {
   PubSub.subscribe('Dinosaurs:data-loaded', (event) => {
     this.render(event.detail);
+
   })
 };
 
@@ -20,19 +21,26 @@ Timeline.prototype.render = function (data) {
   const dinosaurContainer = document.createElement('div');
   dinosaurContainer.id = 'container';
 
-  const rightContainer = document.createElement('div');
-  rightContainer.id = 'right-container';
-  dinosaurContainer.appendChild(rightContainer);
+  const leftContainer = document.createElement('div');
+  leftContainer.id = 'left-container';
+  dinosaurContainer.appendChild(leftContainer);
 
   const middleContainer = document.createElement('div');
   middleContainer.id = 'middle-container';
   dinosaurContainer.appendChild(middleContainer);
 
-  const leftContainer = document.createElement('div');
-  leftContainer.id = 'left-container';
-  dinosaurContainer.appendChild(leftContainer);
+  const rightContainer = document.createElement('div');
+  rightContainer.id = 'right-container';
+  dinosaurContainer.appendChild(rightContainer);
 
-  dinosaurContainer.id = 'dinosaur';
+
+
+
+
+
+
+  rightContainer.innerHTML = "Click a dinosaur image to get more information "
+
 
   data.sort(function(a, b) {
     return b.firstAppeared - a.firstAppeared;
@@ -57,33 +65,47 @@ Timeline.prototype.render = function (data) {
     const picture = this.createPicture(dinosaur.picture);
     leftContainer.appendChild(picture);
 
+    picture.addEventListener('click', (event) => {
 
-  })
+      rightContainer.innerHTML = ''
 
+      const name = this.createHeading(dinosaur.name);
+      rightContainer.appendChild(name)
+
+
+    })
+
+
+  });
 
   this.container.appendChild(dinosaurContainer);
-};
+
+}
 
 
-Timeline.prototype.createHeading = function (textContent) {
-  const heading = document.createElement('h3');
-  heading.textContent = textContent;
-  return heading;
-};
-
-Timeline.prototype.createPicture = function (image) {
-  const picture = document.createElement('img');
-  picture.src = image;
-  picture.classList.add("dino_image");
-  return picture;
-};
-
-Timeline.prototype.createEra = function (period) {
-const era = document.createElement('h4');
-era.src = period;
-era.textContent = period;
-return era;
-};
 
 
-module.exports = Timeline;
+  Timeline.prototype.createHeading = function (textContent) {
+    const heading = document.createElement('h3');
+    heading.textContent = textContent;
+    return heading;
+  };
+
+  Timeline.prototype.createPicture = function (image) {
+    const picture = document.createElement('img');
+    picture.src = image;
+    picture.classList.add("dino_image");
+    return picture;
+  };
+
+  Timeline.prototype.createEra = function (period) {
+    const era = document.createElement('h4');
+    era.src = period;
+    era.textContent = period;
+    return era;
+  };
+
+
+
+
+  module.exports = Timeline;
