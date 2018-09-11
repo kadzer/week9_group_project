@@ -41,6 +41,7 @@ DetailView.prototype.render = function (dinosaur) {
   const audio = this.createAudio(dinosaur.audio);
   dinosaurContainer.appendChild(audio);
 
+
 };
 
 DetailView.prototype.createHeading = function (textContent) {
@@ -72,12 +73,9 @@ DetailView.prototype.createAudio = function (audio) {
   const button = document.createElement('img');
   button.src = 'images/play.png';
   button.classList.add("play");
+  const sound = new Audio(audio);
   button.addEventListener('click', (event) => {
-    const sound = document.createElement('audio');
-    audio.src = audio;
-    console.log(audio);
-    audio.play();
-
+    sound.play();
   })
   return button;
   return sound;
