@@ -3,6 +3,8 @@ const GridView = require('./views/grid_view.js');
 const DetailView = require('./views/detail_view.js');
 const NaviView = require('./views/navi_view.js');
 const MapWrapper = require('./views/map_wrapper.js');
+const PeriodView = require('./views/period_view.js');
+
 document.addEventListener('DOMContentLoaded', () => {
   const dinosaurs = new Dinosaurs();
   //calling getData before bindEvents to make sure dinos are stored
@@ -17,11 +19,15 @@ document.addEventListener('DOMContentLoaded', () => {
   const dinoGridView = new GridView(dinoContainer);
   dinoGridView.bindEvents();
 
-const container = document.createElement('div');
-container.id = "map";
+  const container = document.createElement('div');
+  container.id = "map";
   const mapWrapper = new MapWrapper(container)
   mapWrapper.bindEvents();
   const detailView = new DetailView(mapWrapper);
   detailView.bindEvents();
+
+  const periodElement = document.querySelector('#period-select')
+  const periodView = new PeriodView(periodElement);
+  periodView.bindEvents();
 
 });
