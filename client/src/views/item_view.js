@@ -9,9 +9,6 @@ ItemView.prototype.bindEvents = function () {
   gridElements.forEach((element) => {
     element.addEventListener('click', (event) => {
       const selectedDinosaur = event.target.parentElement.textContent;
-
-      // console.log(selectedDinosaur);
-
       PubSub.publish('GridView:Change', selectedDinosaur);
     })
   });

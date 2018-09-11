@@ -1,7 +1,6 @@
 const PubSub = require('../helpers/pub_sub.js');
 
-const DetailView = function (container) {
-  this.container = container
+const DetailView = function () {
 };
 
 DetailView.prototype.bindEvents = function () {
