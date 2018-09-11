@@ -34,7 +34,23 @@ Timeline.prototype.render = function (data) {
 
   dinosaurContainer.id = 'dinosaur';
 
+  data.sort(function(a, b) {
+    return b.firstAppeared - a.firstAppeared;
+  });
+
+  console.log(data);
+
+  var eras = []
+
+
   data.forEach((dinosaur) => {
+
+    if (!eras.includes(dinosaur.period)) {
+      const era = this.createEra(dinosaur.period)
+      leftContainer.appendChild(era)
+      eras.push(dinosaur.period)
+    }
+
     const name = this.createHeading(dinosaur.name);
     leftContainer.appendChild(name);
 
@@ -60,6 +76,13 @@ Timeline.prototype.createPicture = function (image) {
   picture.src = image;
   picture.classList.add("dino_image");
   return picture;
+};
+
+Timeline.prototype.createEra = function (period) {
+const era = document.createElement('h4');
+era.src = period;
+era.textContent = period;
+return era;
 };
 
 
