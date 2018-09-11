@@ -4,6 +4,7 @@ const DetailView = require('./views/detail_view.js');
 const NaviView = require('./views/navi_view.js');
 const MapWrapper = require('./views/map_wrapper.js');
 const PeriodView = require('./views/period_view.js');
+const TimeLine = require('./views/timeline_view.js');
 
 document.addEventListener('DOMContentLoaded', () => {
   const dinosaurs = new Dinosaurs();
@@ -28,6 +29,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const periodElement = document.querySelector('#period-select')
   const periodView = new PeriodView(periodElement);
+
+  const timeline = new TimeLine(dinoContainer);
+  timeline.bindEvents()
+
   periodView.bindEvents();
+
+
 
 });

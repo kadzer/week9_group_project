@@ -9,11 +9,14 @@ const Timeline = function (container) {
 Timeline.prototype.bindEvents = function () {
   PubSub.subscribe('Dinosaurs:data-loaded', (event) => {
     this.render(event.detail);
-
   })
 };
 
 Timeline.prototype.render = function (data) {
+
+
+  this.container.innerHTML = '';
+
   const dinosaurContainer = document.createElement('div');
   dinosaurContainer.id = 'container';
 
@@ -29,19 +32,35 @@ Timeline.prototype.render = function (data) {
   leftContainer.id = 'left-container';
   dinosaurContainer.appendChild(leftContainer);
 
-  dinosaurContainer.displayDinosaurs();
+  dinosaurContainer.id = 'dinosaur';
 
+  data.forEach((dinosaur) => {
+    const name = this.createHeading(dinosaur.name);
+    leftContainer.appendChild(name);
+
+    const picture = this.createPicture(dinosaur.picture);
+    leftContainer.appendChild(picture);
+
+
+  })
+
+
+  this.container.appendChild(dinosaurContainer);
 };
 
-Timeline.prototype.displayDinosaurs = function () {
 
-  const itemView = new ItemView(dinoGrid);
-  dinosaurs.forEach((dinosaur) =>  {
-    itemView.render(dinosaur);
-  });
-  itemView.bindEvents();
+Timeline.prototype.createHeading = function (textContent) {
+  const heading = document.createElement('h3');
+  heading.textContent = textContent;
+  return heading;
 };
 
+Timeline.prototype.createPicture = function (image) {
+  const picture = document.createElement('img');
+  picture.src = image;
+  picture.classList.add("dino_image");
+  return picture;
+};
 
 
 module.exports = Timeline;
