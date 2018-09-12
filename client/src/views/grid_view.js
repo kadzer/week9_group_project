@@ -10,6 +10,9 @@ GridView.prototype.bindEvents = function () {
   PubSub.subscribe('Dinosaurs:data-loaded', (event) => {
     this.renderDinoGrid(event.detail);
   });
+  PubSub.subscribe('Dinosaurs:data-sorted', (event) => {
+    this.renderDinoGrid(event.detail);
+  })
 };
 
 

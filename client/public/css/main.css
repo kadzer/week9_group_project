@@ -1,5 +1,5 @@
 body {
-  background-image: url(../images/background.png);
+  background-image: url(../images/background_light.png);
   background-attachment: fixed;
   color: white;
   overflow-x: hidden;
@@ -51,6 +51,13 @@ title {
   display: inline-block;
   transition: .5s;
   float: left;
+
+}
+
+span {
+  font-family: 'Luckiest Guy', cursive;
+  background-color: blue;
+  text-align: center;
 
 }
 
@@ -157,16 +164,18 @@ p {
   display: flex;
   justify-content: flex-end;
 
+
 }
 
 select#period-select {
   background: darkcyan;
-  color: black;
+  color: white;
   width: 250px;
   border: none;
   font-size: 20px;
   box-shadow: 0 5px 25px black;
   outline: none;
+  font-family: 'Patrick Hand', cursive;
 }
 
 label {
@@ -234,7 +243,6 @@ div#left-container {
 
 div#right-container {
   width: 12.5rem;
-
   font-family: 'Luckiest Guy', cursive;
   font-size: 20px;
   text-align: center;
@@ -292,4 +300,15 @@ h3#timelineHeading
   border-radius: 5px;
   padding-top: 7px;
   color: white;
+}
+h4 {
+  color: white;
+  font-family: 'Patrick Hand', cursive;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+#firstAppeared {
+  font-family: 'Patrick Hand', cursive;
+  font-size: 20px;
 }
