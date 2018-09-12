@@ -6,7 +6,6 @@ const PeriodView = function (selectElement) {
 
 PeriodView.prototype.bindEvents = function () {
   PubSub.subscribe('Dinosaurs:periods-ready', (event) => {
-    console.log(event.detail);
     const periodElement = document.querySelector('period-select');
     this.populateDropDown(event.detail);
 

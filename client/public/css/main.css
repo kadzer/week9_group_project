@@ -2,6 +2,8 @@ body {
   background-image: url(../images/background.png);
   background-attachment: fixed;
   color: white;
+  overflow-x: hidden;
+
 }
 
 .dino_image {
@@ -143,6 +145,7 @@ p {
   font-family: 'Roboto', sans-serif;
 }
 
+
 .period-list {
   display: flex;
   justify-content: flex-end;
@@ -168,4 +171,100 @@ label {
   display: flex;
   justify-content: flex-end;
   margin-top: 100px;
+}
+
+* {
+  box-sizing: border-box;
+}
+/*This just stops me getting horizontal scrolling if anything overflows the width*/
+body {
+  overflow-x: hidden;
+}
+/*Just removing default browser padding/margin*/
+html,
+body {
+  padding: 0;
+  margin: 0;
+  color: #ebebeb;
+}
+
+div#container {
+    display: flex;
+    overflow: hidden;
+    height: 100vh;
+    margin-top: -100px;
+    padding-top: 100px;
+    position: relative;
+    width: 100%;
+    backface-visibility: hidden;
+    will-change: overflow;
+}
+/*All the scrollable sections should overflow and be whatever height they need to be. As they are flex-items (due to being inside a flex container) they could be made to stretch full height at all times if needed.
+WebKit inertia scrolling is being added here for any present/future devices that are able to make use of it.
+*/
+div#left-container,
+div#right-container {
+    flex-grow: 1;
+    overflow: auto;
+    height: auto;
+    padding: .5rem;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: none;
+    z-index: 1;
+
+}
+/*Entirely optional – just wanted to remove the scrollbar on WebKit browsers as I find them ugly*/
+div#left-container::-webkit-scrollbar,
+div#right-container::-webkit-scrollbar {
+    display: none;
+}
+/*  Left and Right are set sizes while the Middle is set to flex one so it occupies all remaining space. This could be set as a width too if prefereable, perhaps using calc.*/
+div#left-container {
+    width: 12.5rem;
+
+}
+
+
+div#right-container {
+    width: 12.5rem;
+
+    font-family: 'Luckiest Guy', cursive;
+    font-size: 20px;
+    text-align: center;
+}
+
+div#left-container:after {
+    content:"";
+    position: absolute;
+    margin-top: 100px;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    border-left: 10px solid black;
+    transform: translate(-50%);
+}
+
+p#timelineP
+{
+margin: 0;
+margin-top: 15px;
+padding: 0;
+text-align: center;
+}
+
+h3#timelineHeading
+{
+  margin: 0;
+  margin-top: 100px;
+}
+
+#timelineButton
+{
+  display: flex;
+  justify-content: center;
+  height: 50px;
+  width: 200px;
+font-size: 20px;
+font-family: 'Luckiest Guy', cursive;
+background-color: darkcyan
 }
