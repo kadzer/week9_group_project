@@ -11,6 +11,7 @@ db.dinoCollection.insertMany([
     "length": "12m",
     "period": "Late Jurassic",
     "mya": "156-144",
+    "firstAppeared": 156,
     "info": "Allosaurus was an apex predator in the Late Jurassic in North America.",
     "picture": "images/Allosaurus.png",
     "latlng": [
@@ -28,6 +29,7 @@ db.dinoCollection.insertMany([
     "length": "21m",
     "period": "Late Jurassic",
     "mya": "154-145",
+    "firstAppeared": 154,
     "info": "Named the 'deceptive lizard' because its skull was confused with those of other sauropods until 1909.",
     "picture": "images/Apatosaurus.png",
     "latlng": [
@@ -45,6 +47,7 @@ db.dinoCollection.insertMany([
     "length": "30m",
     "period": "Late Jurassic",
     "mya": "155-140",
+    "firstAppeared": 155,
     "info": "Brachiosaurus was a large, North American sauropod dinosaur with an arch encircling its nasal opening.",
     "picture": "images/Brachiosaurus.png",
     "latlng": [
@@ -62,6 +65,7 @@ db.dinoCollection.insertMany([
     "length": "estimated 4m",
     "period": "Late Cretaceous",
     "mya": "66",
+    "firstAppeared": 66,
     "info": "Dracorex hogwartsia was a pachycephalosaur that did not have a domed head. Instead, its skull was adorned with spikes and frills reminiscent of a dragon. A skull was discovered in the Hell Creek Formation in South Dakota and donated to the Children's Museum of Indianapolis in 2004. Its name was inspired by J.K. Rowling's Harry Potter series and the young visitors to the children's museum.",
     "picture": "images/Dracorex.png",
     "latlng": [
@@ -79,6 +83,7 @@ db.dinoCollection.insertMany([
     "length": "11m",
     "period": "Late Cretaceous",
     "mya": "76-74",
+    "firstAppeared": 76,
     "info": "Found in Canada and the USA, Parasaurolophus was a hadrosaur most famous for its long, elaborate cranial crest.",
     "picture": "images/Parasaurolophus.png",
     "latlng": [
@@ -96,6 +101,7 @@ db.dinoCollection.insertMany([
     "length": "18m",
     "period": "Early Cretaceous",
     "mya": "112-97",
+    "firstAppeared": 112,
     "info": "Spinosaurus was one of the largest carnivorous dinosaurs to walk the Earth. Its diet consisted mostly of fish and the large spines on its back likely formed a sail.",
     "picture": "images/Spinosaurus.png",
     "latlng": [
@@ -113,6 +119,7 @@ db.dinoCollection.insertMany([
     "length": "9m",
     "period": "Late Jurassic",
     "mya": "156-140",
+    "firstAppeared": 156,
     "info": "Stegosaurus had 17 bony plates that were embedded in its back - the plates ran along the Stegosaurus' back and tail in two rows, and the plates alternated in alignment. The largest of these triangular plates was about 2.5 ft (76 cm) tall and just as long. Stegosaurus also had spikes at the end of its flexible tail (these are called thagomizers).",
     "picture": "images/Stegosaurus.png",
     "latlng": [
@@ -130,6 +137,7 @@ db.dinoCollection.insertMany([
     "length": "9m",
     "period": "Late Cretaceous",
     "mya": "72-65",
+    "firstAppeared": 72,
     "info": "When threatened by predators, Triceratops probably charged into its enemy like the modern-day rhinoceros does. Triceratops was probably a herding animal, like the other ceratopsians. T. rex probably ate dinosaurs like Triceratops.",
     "picture": "images/Triceratops.png",
     "latlng": [
@@ -147,6 +155,7 @@ db.dinoCollection.insertMany([
     "length": "12m",
     "period": "Late Cretaceous",
     "mya": "68-66",
+    "firstAppeared": 68,
     "info": "Tyrannosaurus is well-represented in both fiction and history with over 50 specimens discovered. It and was one of the last non-avian dinosaurs to exist before the extinction event. Tyrannosaurus had a massive skull and a long heavy tail.",
     "picture": "images/Tyrannosaurus.png",
     "latlng": [
