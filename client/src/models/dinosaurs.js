@@ -63,7 +63,7 @@ Dinosaurs.prototype.dinosByPeriod = function (periodIndex) {
 
 Dinosaurs.prototype.publishDinosByPeriod = function (periodIndex) {
   const foundDinos = this.dinosByPeriod(periodIndex);
-  PubSub.publish('Dinosaurs:data-loaded', foundDinos);
+  PubSub.publish('Dinosaurs:data-sorted', foundDinos);
 };
 
 module.exports = Dinosaurs;

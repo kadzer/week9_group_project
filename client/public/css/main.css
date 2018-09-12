@@ -1,5 +1,5 @@
 body {
-  background-image: url(../images/background.png);
+  background-image: url(../images/background_light.png);
   background-attachment: fixed;
   color: white;
   overflow-x: hidden;
@@ -54,6 +54,13 @@ title {
 
 }
 
+span {
+  font-family: 'Luckiest Guy', cursive;
+  background-color: blue;
+  text-align: center;
+
+}
+
 .title span {
   width: 75px;
   height: 75px;
@@ -94,25 +101,30 @@ whose index is odd  */
 }
 
 ul {
-  margin-top: -40px;
+  margin-top: -20px;
   position: absolute;
   z-index: 100;
-  background-color: black;
+  background-color: darkcyan;
   width: 150px;
   padding: 0;
   text-align: center;
   list-style: none;
   line-height: 40px;
   border-radius: 5px;
-  font-family: 'Patrick Hand', cursive;
+  border: 1px solid white;
+  font-family: 'Luckiest Guy', cursive;
   font-weight: bold;
+  color: white;
+  height: 35px;
+  width: 200px;
+  font-size: 20px;
 }
 
 ul li {
-  border-radius: 5px;
-  width: 150px;
-  height: 40px;
-  background-color: black;
+  border-radius: 2x;
+  width: 200px;
+  height: 50px;
+  background-color: darkcyan;
   line-height: 40px;
   display: none;
   text-align: center;
@@ -121,6 +133,8 @@ ul li {
   /* font-family: 'Luckiest Guy', cursive; */
   font-family: 'Patrick Hand', cursive;
   font-weight: bold;
+
+
 }
 
 ul li:hover {
@@ -150,21 +164,23 @@ p {
   display: flex;
   justify-content: flex-end;
 
+
 }
 
 select#period-select {
   background: darkcyan;
-  color: black;
+  color: white;
   width: 250px;
   border: none;
   font-size: 20px;
   box-shadow: 0 5px 25px black;
   outline: none;
+  font-family: 'Patrick Hand', cursive;
 }
 
 label {
   font-size: 20px;
-  font-family: 'Patrick Hand', cursive;
+  font-family: 'Luckiest Guy', cursive;
 }
 
 .select-option {
@@ -189,67 +205,66 @@ body {
 }
 
 div#container {
-    display: flex;
-    overflow: hidden;
-    height: 100vh;
-    /* margin-top: -100px; */
-    padding-top: 100px;
-    position: relative;
-    width: 100%;
-    backface-visibility: hidden;
-    will-change: overflow;
+  display: flex;
+  overflow: hidden;
+  height: 100vh;
+  /* margin-top: -100px; */
+  padding-top: 100px;
+  position: relative;
+  width: 100%;
+  backface-visibility: hidden;
+  will-change: overflow;
 }
 /*All the scrollable sections should overflow and be whatever height they need to be. As they are flex-items (due to being inside a flex container) they could be made to stretch full height at all times if needed.
 WebKit inertia scrolling is being added here for any present/future devices that are able to make use of it.
 */
 div#left-container,
 div#right-container {
-    flex-grow: 1;
-    overflow: auto;
-    height: auto;
-    padding: .5rem;
-    -webkit-overflow-scrolling: touch;
-    -ms-overflow-style: none;
-    z-index: 1;
+  flex-grow: 1;
+  overflow: auto;
+  height: auto;
+  padding: .5rem;
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: none;
+  z-index: 1;
 
 }
 /*Entirely optional – just wanted to remove the scrollbar on WebKit browsers as I find them ugly*/
 div#left-container::-webkit-scrollbar,
 div#right-container::-webkit-scrollbar {
-    display: none;
+  display: none;
 }
 /*  Left and Right are set sizes while the Middle is set to flex one so it occupies all remaining space. This could be set as a width too if prefereable, perhaps using calc.*/
 div#left-container {
-    width: 12.5rem;
+  width: 12.5rem;
 
 }
 
 
 div#right-container {
-    width: 12.5rem;
-
-    font-family: 'Luckiest Guy', cursive;
-    font-size: 20px;
-    text-align: center;
+  width: 12.5rem;
+  font-family: 'Luckiest Guy', cursive;
+  font-size: 20px;
+  text-align: center;
 }
 
 div#left-container:after {
-    content:"";
-    position: absolute;
-    margin-top: 100px;
-    top: 0;
-    bottom: 0;
-    left: 50%;
-    border-left: 10px solid black;
-    transform: translate(-50%);
+  content:"";
+  position: absolute;
+  margin-top: 100px;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  border-left: 10px solid black;
+  transform: translate(-50%);
 }
 
 p#timelineP
 {
-margin: 0;
-margin-top: 15px;
-padding: 0;
-text-align: center;
+  margin: 0;
+  margin-top: 15px;
+  padding: 0;
+  text-align: center;
 }
 
 h3#timelineHeading
@@ -258,13 +273,42 @@ h3#timelineHeading
   margin-top: 100px;
 }
 
+#timeline-button {
+  display: flex;
+
+}
+
+#main-nav {
+  display: flex;
+  align-items: baseline;
+  /* flex-direction: row; */
+  /* display: inline-flex; */
+  justify-content: space-between;
+  margin-top: -50px;
+}
+
 #timelineButton
 {
   display: flex;
   justify-content: center;
-  height: 50px;
+  height: 35px;
   width: 200px;
-font-size: 20px;
-font-family: 'Luckiest Guy', cursive;
-background-color: darkcyan
+  font-size: 20px;
+  font-family: 'Luckiest Guy', cursive;
+  background-color: darkcyan;
+  margin-left: 250px;
+  border-radius: 5px;
+  padding-top: 7px;
+  color: white;
+}
+h4 {
+  color: white;
+  font-family: 'Patrick Hand', cursive;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+#firstAppeared {
+  font-family: 'Patrick Hand', cursive;
+  font-size: 20px;
 }
