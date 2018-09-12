@@ -7,7 +7,7 @@ const Timeline = function (container) {
 };
 
 Timeline.prototype.bindEvents = function () {
-  PubSub.subscribe('GridView:timelineClick', (event) => {
+  PubSub.subscribe('ButtonView:timelineClick', (event) => {
     this.render(event.detail);
     PubSub.subscribe('Dinosaurs:data-loaded', (event) => {
       this.render(event.detail);
