@@ -1,5 +1,6 @@
 const PubSub = require('../helpers/pub_sub');
 
+// Google maps
 const MapWrapper = function (container) {
   this.container = container;
   this.map = L.map(this.container)
