@@ -9,13 +9,22 @@ const Timeline = function (container) {
 Timeline.prototype.bindEvents = function () {
   PubSub.subscribe('GridView:timelineClick', (event) => {
     this.render(event.detail);
+    PubSub.subscribe('Dinosaurs:data-loaded', (event) => {
+      this.render(event.detail);
+    });
   })
+
+  // GridView.prototype.bindEvents = function () {
+  //   PubSub.subscribe('Dinosaurs:data-loaded', (event) => {
+  //     this.renderDinoGrid(event.detail);
+  //   });
+  // };
 
 
 
   Timeline.prototype.render = function (data) {
 
-
+    console.log(this.container);
     this.container.innerHTML = '';
 
     const dinosaurContainer = document.createElement('div');
@@ -57,8 +66,12 @@ Timeline.prototype.bindEvents = function () {
       const name = this.createHeading(dinosaur.name);
       leftContainer.appendChild(name);
 
+
       const picture = this.createPicture(dinosaur.picture);
       leftContainer.appendChild(picture);
+
+      const firstAppeared = this.firstAppeared(dinosaur.firstAppeared);      leftContainer.appendChild(firstAppeared);
+
 
       picture.addEventListener('click', (event) => {
 
@@ -66,6 +79,8 @@ Timeline.prototype.bindEvents = function () {
 
         const name = this.createHeading(dinosaur.name);
         rightContainer.appendChild(name)
+
+
 
         const pronunciation = this.createDetail('Pronunciation:  ', dinosaur.pronunciation);
         rightContainer.appendChild(pronunciation);
@@ -92,7 +107,6 @@ Timeline.prototype.bindEvents = function () {
         rightContainer.appendChild(period);
         period.id = 'timelineP';
 
-
       })
 
 
@@ -112,6 +126,15 @@ Timeline.prototype.bindEvents = function () {
 
     heading.textContent = textContent;
     return heading;
+  };
+
+  Timeline.prototype.firstAppeared = function (firstAppeared) {
+    const containerFirstAppeared = document.createElement('p');
+    containerFirstAppeared.textContent = `First appeared ${firstAppeared} million years ago`
+    containerFirstAppeared.id = 'firstAppeared';
+
+    return containerFirstAppeared
+
   };
 
   Timeline.prototype.createDetail = function (label, text) {
