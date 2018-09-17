@@ -67,3 +67,21 @@ Dinosaurs.prototype.publishDinosByPeriod = function (periodIndex) {
 };
 
 module.exports = Dinosaurs;
+
+
+
+// const Dinosaur = function (name, pronunciation, meaningOfName, diet, length, period) {
+//   this.name = name,
+//   this.pronunciation = pronunciation,
+//   this.meaningOfName = meaningOfName,
+//   this.diet = diet,
+//   this.length = length,
+//   this.period = period
+// }
+//
+//
+//
+//
+//
+//
+// module.exports = Dinosaur;
