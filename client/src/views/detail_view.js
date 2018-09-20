@@ -1,6 +1,4 @@
 const PubSub = require('../helpers/pub_sub.js');
-const MapWrapper = require('./map_wrapper.js');
-
 const DetailView = function (mapWrapper) {
   this.mapWrapper = mapWrapper;
 };

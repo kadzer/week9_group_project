@@ -9,6 +9,7 @@ const MapWrapper = function (container) {
 
 MapWrapper.prototype.bindEvents = function () {
   PubSub.subscribe('Dinosaurs:found-dino', (event) => {
+    // this.map.invalidateSize();
     this.markers.forEach((marker)=>{
       this.map.removeLayer(marker);
     });
